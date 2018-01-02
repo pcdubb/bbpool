@@ -61,15 +61,18 @@ function makeHtmlListForPage(){
 
 function makeHtmlListForPage2(currentTurn){
 var htmlTurns = '';
+var htmlWhoseTurn = '';
 for (var i = 0; i < turns.length; i++) {
     if(i == currentTurn){
         htmlTurns = htmlTurns + "<li class='turns' style='background-color:yellow';>" + turns[i] + "</li>";
+        htmlWhoseTurn = '<font color="red">' + '<u>' + turns[i] + '</u>' + '</font>' + ' is on the clock!';
     }
     else{
         htmlTurns = htmlTurns + "<li class='turns';>" + turns[i] + "</li>";
     }
 };
         document.getElementById('draft-order').innerHTML = htmlTurns;
+        document.getElementById('whose-turn').innerHTML = htmlWhoseTurn;
 };
 
 

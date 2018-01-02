@@ -75,15 +75,31 @@ function getPicker(array,num,email){
           console.log("Team is on list!");
             firebase.database().ref("2018selections").orderByChild("selTeam").equalTo(team).once("value",snapshot => {
                 const userData = snapshot.val();
-                if (userData){
-                console.log("exists!");
-                alert('Sorry, ' + team + ' has already been selected!');
+                if (array[num] == email){
+                    console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
+                    if (userData){
+                        console.log("exists!");
+                        alert('Sorry, ' + team + ' has already been selected!');
+                        }
+                        else{
+                            saveTeamToDb(email,team,num);
+                            window.location.reload();
+                            alert('Congrats, you have selected ' + team);  
+                        }
                 }
                 else{
-                    saveTeamToDb(email,team,num);
-                    alert('Congrats, you have selected ' + team);
+                    alert('Sorry, it is not your turn!')
+                };
+
+                // if (userData){
+                // console.log("exists!");
+                // alert('Sorry, ' + team + ' has already been selected!');
+                // }
+                // else{
+                //     saveTeamToDb(email,team,num);
+                //     alert('Congrats, you have selected ' + team);
                     
-                }
+                // }
             });
         }
         else{
@@ -92,12 +108,12 @@ function getPicker(array,num,email){
     });
 
 
-    if (array[num] == email){
-        console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
-    }
-    else{
-        alert('Sorry, it is not your turn!')
-    };
+    // if (array[num] == email){
+    //     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
+    // }
+    // else{
+    //     alert('Sorry, it is not your turn!')
+    // };
 };
 
 

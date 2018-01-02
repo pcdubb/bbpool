@@ -1,5 +1,5 @@
 
-
+// This populates the selection box for teams with NCAA BB Teams for selection
 
 var query = firebase.database().ref("teams").orderByKey();
 var teamArray = [];

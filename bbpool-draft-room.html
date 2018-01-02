@@ -58,14 +58,15 @@ cursor: pointer; cursor: hand;
   </div><!-- /.container-fluid -->
 </nav>
 
+
 <!-- ++++++++++++++++++++++++++++ Page Label +++++++++++++++++++++++++++++++++++++++++++ -->
 
    
-   <div class="container">
+    <div class="container">
         <h1 class="text-center">Draft Room</h1>
         <object width="300" height="300" class="center-block" data="html/bball_img.html"> 
         </object>
-  </div>
+    </div>
 
 <!--<div class="span4 col-xs-offset-4">
     <div class='col-sm-6'>
@@ -86,9 +87,55 @@ cursor: pointer; cursor: hand;
     </div>
 </div>-->
 
-<!-- ++++++++++++++++++++++++++++Draft Table +++++++++++++++++++++++++++++++++++++++++++ -->
+<!-- ++++++++++++++++++++++++++++++++++ Whose Turn It is +++++++++++++++++++++++++++++++++++++++ -->
 
+
+<div class="container-fluid">
+        <hr>
+        <ol>
+        <h1 class="text-center">
+        <div id='whose-turn'></div>
+        </h1>
+        <hr>
+        </ol>
+  </div>
+  </div>
+  </div>
+
+<!-- ++++++++++++++++++++++++ Selection box  ++++++++++++++++++++++++++++++++++ -->
+
+<!--<div class="quickstart-user-details-container">
+    Firebase sign-in status: <br>
+    <p>Name: <span id="check-name">Unknown</span></p>
+    <p>email: <span id="check-email">Unknown</span></p>
+    <p>uid: <span id="check-uid">Unknown</span></p>   
+    <p>password from modal: <span id="check-modal"></span></p>  -->
+
+<div class="container">
+        <!-- <div class="span3 col-xs-offset-4"> -->
+            <div class='text-center'>
+            <div class="ui-widget">
+                <div class="row align-items-center justify-content-center">
+                <label for="tags"> <h2 class="text-center">Select a Team: </h2></label><br>
+                </div>
+                <p> Search for a team below.</p>
+                <input align='middle' class='form-control' id="tags">
+            <!-- </div>  -->
+            <button class="btn btn-primary" id='select-btn'>Select Team</button>
+            </div>
+            <div id='show-user'></div>
+            <div id='show-team'></div>
+            <div id='show-team-id'></div>
+        </div> 
+</div>
+    
+
+
+
+<!-- ++++++++++++++++++++++++++++Draft Table +++++++++++++++++++++++++++++++++++++++++++ -->
+<br><br>
 <div class="container "><table class="text-center table table-bordered table-responsive">
+ <br><br><br>
   <thead>
   <tr> 
     <th colspan="11" class="text-center active"><h4>Current Results</h4></th>
@@ -175,40 +222,7 @@ cursor: pointer; cursor: hand;
 
       <hr>
 </div>
-<!-- ++++++++++++++++++++++++ Selection box  ++++++++++++++++++++++++++++++++++ -->
 
-<!--<div class="quickstart-user-details-container">
-    Firebase sign-in status: <br>
-    <p>Name: <span id="check-name">Unknown</span></p>
-    <p>email: <span id="check-email">Unknown</span></p>
-    <p>uid: <span id="check-uid">Unknown</span></p>   
-    <p>password from modal: <span id="check-modal"></span></p>  -->
-
-
-    <div class='container-fluid col-md-8'>
-        <div class="span3 col-xs-offset-4">
-            <div class='col-sm-6'>
-            <div class="ui-widget">
-                <label for="tags"> <h2 class="text-center">Select a Team: </h2></label><br>
-                <p> Search for a team below.</p>
-                <input class='form-control' id="tags">
-            </div> 
-            <button class="btn btn-primary" id='select-btn'>Select Team</button>
-            </div>
-            <div id='show-user'></div>
-            <div id='show-team'></div>
-            <div id='show-team-id'></div>
-        </div>  
-    </div>
-
-
-
-</div>
-
-
-</div>
-
-</div>
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
 
 
@@ -219,12 +233,6 @@ cursor: pointer; cursor: hand;
     <ol>
     <div id='draft-order'></div>
     </ol>
-
-
-
-
-
-
 </div>
 
 
