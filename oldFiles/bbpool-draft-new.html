@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draft Login</title>
+
+  <!-- Material Design Theming -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+  <!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/3.6.5/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBbxTFPsHU_ShzMoUkbBuhtFTvU2v_gtXM",
+    authDomain: "bbpool-66517.firebaseapp.com",
+    databaseURL: "https://bbpool-66517.firebaseio.com",
+    storageBucket: "bbpool-66517.appspot.com",
+    messagingSenderId: "768155263555"
+  };
+  firebase.initializeApp(config);
+</script>
+
+<script type="text/javascript">
+
+    /**
+     * Handles the sign in button press.
+     */
+
+
+    // function signIn(email,password) {
+    //   document.getElementById('test-data').textContent = email;
+
+    //   firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    //       // Handle Errors here.
+    //       var errorCode = error.code;
+    //       var errorMessage = error.message;
+    //       // [START_EXCLUDE]
+    //       if (errorCode === 'auth/wrong-password') {
+    //         alert('Wrong password.');
+    //       } else {
+    //         alert(errorMessage);
+    //       }
+    //   });
+    // }
+
+
+
+    // function toggleSignIn() {
+    //   var user = firebase.auth().currentUser;
+
+    //   if (user) {
+    //     // [START signout]
+    //     firebase.auth().signOut();
+    //     // [END signout]
+    //   } else {
+    //     var email = document.getElementById('email').value;
+    //     var password = document.getElementById('password').value;
+	  //     var screenName = document.getElementById('screenName-txt').value;
+    //     if (email.length < 4) {
+    //       alert('Please enter an email address.');
+    //       return;
+    //     }
+    //     if (password.length < 4) {
+    //       alert('Please enter a password.');
+    //       return;
+    //     }
+    //     // Sign in with email and pass.
+    //     // [START authwithemail]
+    //     firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+    //       // Handle Errors here.
+    //       var errorCode = error.code;
+    //       var errorMessage = error.message;
+    //       // [START_EXCLUDE]
+    //       if (errorCode === 'auth/wrong-password') {
+    //         alert('Wrong password.');
+    //       } else {
+    //         alert(errorMessage);
+    //       }
+    //       console.log(error);
+    //       document.getElementById('quickstart-sign-in').disabled = false;
+    //       // [END_EXCLUDE]
+    //     });
+    //   }
+    //     // [END authwithemail]
+    //   //document.getElementById('quickstart-sign-in').disabled = true;
+    //   //document.getElementById('quickstart-sign-up').disabled = true;
+    //   document.getElementById('setFirstName-btn').style.display = '';  
+    //   document.getElementById('screenName-txt').style.display = ''; 
+    //   //document.getElementById('quickstart-verify-email').style.display = 'none';
+    //   document.getElementById('quickstart-sign-up').style.display = 'none'; 
+    //   document.getElementById('quickstart-password-reset').style.display = 'none';    
+    // }
+
+
+    /**
+     * Handles the sign up button press.
+     */
+
+
+    function handleSignUp() {
+      var user = firebase.auth().currentUser;
+      var email = document.getElementById('email').value;
+      var password = document.getElementById('password').value;
+      var screenName = document.getElementById('screenName-txt').value;
+      if (email.length < 4) {
+        alert('Please enter an email address.');
+        return;
+      }
+      if (password.length < 4) {
+        alert('Please enter a password.');
+        return;
+      }      
+      if (screenName.length < 4) {
+        alert('Please enter a longer screen name.');
+        return;
+      }
+      // Sign in with email and pass.
+      // [START createwithemail]
+      firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/weak-password') {
+          alert('The password is too weak.');
+        } else {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [END createwithemail]
+    }
+
+
+
+
+    /**
+     * Sends an email verification to the user.
+     */
+
+/**
+    function sendEmailVerification() {
+      // [START sendemailverification]
+      firebase.auth().currentUser.sendEmailVerification().then(function() {
+        // Email Verification sent!
+        // [START_EXCLUDE]
+        alert('Email Verification Sent!');
+        // [END_EXCLUDE]
+      });
+      // [END sendemailverification]
+    }
+*/
+
+
+    function setName() {
+      // [START setName]
+      document.getElementById('test-data').textContent = 'made it';
+      something = document.getElementById('screenName-txt').value;
+      if(something == 'null'){
+          alert('Screen name text box is empty');
+      }
+      if(something.length < 4){
+          alert('Please enter a longer screen name.');
+      }
+      else{
+        user.updateProfile({displayName: something}).then(function() {
+        alert('Your screen name has been updated.');
+        }, function(error) {
+        alert('There was an error. Your screen name was not updated.');
+        });
+      }
+      // [END changeName]
+    }
+
+
+    function sendPasswordReset() {
+      var email = document.getElementById('email').value;
+      // [START sendpasswordemail]
+      firebase.auth().sendPasswordResetEmail(email).then(function() {
+        // Password Reset Email Sent!
+        // [START_EXCLUDE]
+        alert('Password Reset Email Sent!');
+        // [END_EXCLUDE]
+      }).catch(function(error) {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // [START_EXCLUDE]
+        if (errorCode == 'auth/invalid-email') {
+          alert(errorMessage);
+        } else if (errorCode == 'auth/user-not-found') {
+          alert(errorMessage);
+        }
+        console.log(error);
+        // [END_EXCLUDE]
+      });
+      // [END sendpasswordemail];
+    }
+
+
+
+
+    /**
+     * initApp handles setting up UI event listeners and registering Firebase auth listeners:
+     *  - firebase.auth().onAuthStateChanged: This listener is called when the user is signed in or
+     *    out, and that is where we update the UI.
+     */
+    function initApp() {
+      // Listening for auth state changes.
+      // [START authstatelistener]
+      firebase.auth().signOut().then(function() {
+        // Sign-out successful.
+      }, function(error) {
+        // An error happened.
+      });
+      firebase.auth().onAuthStateChanged(function(user) {
+        // [START_EXCLUDE silent]
+        //document.getElementById('quickstart-verify-email').disabled = true;
+        // [END_EXCLUDE]
+        if (user) {
+          // User is signed in.
+	        var screenName = user.displayName;
+          var email = user.email;
+          var emailVerified = user.emailVerified;
+          var photoURL = user.photoURL;
+          var isAnonymous = user.isAnonymous;
+          var uid = user.uid;
+          var providerData = user.providerData;
+          // [START_EXCLUDE silent]
+          // document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
+          // document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          // document.getElementById('quickstart-account-details').textContent = JSON.stringify(user, null, '  ');
+          // document.getElementById('quickstart-sign-up').style.display = 'none'; 
+          // document.getElementById('setFirstName-btn').style.display = '';
+          // //document.getElementById('quickstart-verify-email').style.display = 'none';
+          // document.getElementById('quickstart-password-reset').style.display = 'none';
+
+        //   if (!emailVerified) {
+        //     // User is signed in.
+        //     //document.getElementById('quickstart-verify-email').disabled = false;
+        //     //document.getElementById('quickstart-sign-up').disabled = false;
+	    //     document.getElementById('setFirstName-btn').style.display = '';
+        //     document.getElementById('quickstart-sign-up').style.display = 'none';
+        //     document.getElementById('quickstart-verify-email').style.display = 'none';
+        //     document.getElementById('quickstart-password-reset').style.display = 'none';
+        //   }
+          // [END_EXCLUDE]
+        } else {
+          // User is signed out.
+          // [START_EXCLUDE silent]
+          // document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
+          // document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          // document.getElementById('quickstart-account-details').textContent = 'null';
+          // document.getElementById('screenName-txt').style.display = 'none';
+          // document.getElementById('setFirstName-btn').style.display = 'none';
+          // document.getElementById('quickstart-sign-up').style.display = '';
+          // document.getElementById('quickstart-password-reset').style.display = '';
+          // [END_EXCLUDE]
+        }
+        // [START_EXCLUDE silent]
+        // document.getElementById('quickstart-sign-in').disabled = false;
+        // [END_EXCLUDE]
+      });
+      
+      // [END authstatelistener]
+      document.getElementById('quickstart-sign-in').addEventListener('click', signIn, false);
+      document.getElementById('quickstart-sign-up').addEventListener('click', handleSignUp, false);
+      //document.getElementById('quickstart-verify-email').addEventListener('click', sendEmailVerification, false);
+      document.getElementById('quickstart-password-reset').addEventListener('click', sendPasswordReset, false);
+      document.getElementById('setFirstName-btn').addEventListener('click', setName, false);
+    }
+    window.onload = function() {
+      initApp();
+    };
+  </script>
+</head>
+<body>
+<div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+  <!-- Header section containing title -->
+  <!--<header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+      <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
+        <h3 color="white">bbpool.com draft room</h3>
+      </div>
+    </div>-->
+
+  <header>
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="bbpool.com">bbpool.com</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <!--<ul class="nav navbar-nav">
+        <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+        <li><a href="#">Link</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">One more separated link</a></li>
+          </ul>
+        </li>
+      </ul>-->
+      <!--<form class="navbar-form navbar-left">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form>-->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#" data-toggle="modal" data-target="#login-modal">Login/Sign Up</a></li>
+
+        <!--<li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+          </ul>
+        </li>-->
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+  </header>
+
+
+
+  <main class="mdl-layout__content mdl-color--grey-100">
+    <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
+
+       <!--Container for the demo -->
+      <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
+        <!--<div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
+          <h2>
+              <div id="user-header">bbpool.com sign in page</div>
+          </h2>
+        </div>-->
+
+        <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+
+          <!--<input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+	        &nbsp;&nbsp;&nbsp;
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="screenName-txt" name="screenName-txt" placeholder="Screen Name"/>
+-->
+
+          <br/><br/>
+
+
+          <!--<button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+          &nbsp;&nbsp;&nbsp;-->
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
+          &nbsp;&nbsp;&nbsp;
+          <!--
+              <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-verify-email" name="verify-email">Send Email Verification</button>
+              &nbsp;&nbsp;&nbsp;
+          -->
+          <!--<button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-password-reset" name="verify-email">Send Password Reset Email</button>
+          &nbsp;&nbsp;&nbsp;
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="setFirstName-btn" name="set-name">Update your Screen Name</button>
+-->
+
+          <!-- Container for test data -->
+          <div id="test-data">NULL TEST-DATA</div>
+
+
+
+          <!-- Container where we'll display the user details -->
+          <div class="quickstart-user-details-container">
+            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <pre><code id="quickstart-account-details">null</code></pre>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   </main>
+</body>
+
+<!--Login pop up screen-->
+    <div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" id="email" name="email" placeholder="Email"/>
+					<input type="password" id="password" name="password" placeholder="Password"/>
+					<input type="submit" id="quickstart-sign-in" name="signin" class="login loginmodal-submit" value="Login" onclick="getModalData()">
+
+
+          <script>
+          function getModalData(){
+          var email = document.getElementById('email').value;
+          var password = document.getElementById('password').value;
+            signIn(email,password);
+            }
+
+            function signIn(email,password) {
+            document.getElementById('test-data').textContent = email;
+
+            firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // [START_EXCLUDE]
+                if (errorCode === 'auth/wrong-password') {
+                  alert('Wrong password.');
+                } else {
+                  alert(errorMessage);
+                }
+              });
+            }
+          </script>
+
+
+				  </form>
+					
+				  <div class="login-help">
+					<a href="#">Register</a> - <a href="#">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+
+
+</html>
