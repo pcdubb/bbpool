@@ -69,28 +69,43 @@ function getPicker(array,num,email){
     // });
 
     var team = $('#tags').val();
-    firebase.database().ref("teams").orderByChild("School").equalTo(team).once("value",snapshot => {
-        const teamData = snapshot.val();
+    firebase.database().ref("teams").orderByChild("School").equalTo(team).once("value",snapshot1 => {
+        const teamData = snapshot1.val();
+    firebase.database().ref("2018selections").orderByChild("selTeam").equalTo(team).once("value",snapshot2 => {
+        const userData = snapshot2.val();
+    firebase.database().ref("2018selections").orderByChild("selTeam").once("value",snapshot3 => {
+        const teamList = snapshot3.numChildren();
+
         if (teamData){
           console.log("Team is on list!");
-            firebase.database().ref("2018selections").orderByChild("selTeam").equalTo(team).once("value",snapshot => {
-                const userData = snapshot.val();
+
                 if (array[num] == email){
                     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
-                    if (userData){
-                        console.log("exists!");
-                        alert('Sorry, ' + team + ' has already been selected!');
-                        }
-                        else{
-                            saveTeamToDb(email,team,num);
-                            window.location.reload();
-                            alert('Congrats, you have selected ' + team);  
-                        }
+
+                    console.log(teamList);
+
+                    if(teamList < 10){
+                        saveTeamToDb(email,team,num); 
+                        window.location.reload();
+                        alert('Congrats, you have selected ' + team); 
+                    }
+
+                    else{
+                        if (userData){
+                            console.log("exists!");
+                            alert('Sorry, ' + team + ' has already been selected!');
+                            }
+                            else{
+                                saveTeamToDb(email,team,num); 
+                                window.location.reload();
+                                alert('Congrats, you have selected ' + team); 
+                            }
+                    }
                 }
                 else{
                     alert('Sorry, it is not your turn!')
-                };
-
+                }
+            
                 // if (userData){
                 // console.log("exists!");
                 // alert('Sorry, ' + team + ' has already been selected!');
@@ -100,11 +115,12 @@ function getPicker(array,num,email){
                 //     alert('Congrats, you have selected ' + team);
                     
                 // }
-            });
-        }
+            }
         else{
             alert(team + ' is not on the NCAA list. Please check the selection and pick again');
         }
+    });
+    });   
     });
 
 
@@ -162,9 +178,9 @@ function saveTeamToDb(email,selTeam,pick) {
     email: email,
     selTeam: selTeam
   };
-  var pickSpot = pick +1;
-  var tableCell = 'pick'+pickSpot;
-  document.getElementById(tableCell).textContent = selTeam;
+//   var pickSpot = pick +1;
+//   var tableCell = 'pick'+pickSpot;
+//   document.getElementById(tableCell).textContent = selTeam;
 
   // Get a key for a new Post.
   var newPostKey = firebase.database().ref().child('2018selections').push().key;
@@ -174,6 +190,10 @@ function saveTeamToDb(email,selTeam,pick) {
   updates['/2018selections/' + newPostKey] = postData;
   return firebase.database().ref().update(updates);
 };
+
+
+
+
 
 // //  ++++++++++++++++++++++++ Select team function ++++++++++++++++++++++++++++++++++ 
 

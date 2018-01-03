@@ -1,13 +1,13 @@
-
-
-
 var query = firebase.database().ref("playerTurns").orderByKey();
+var queryTeams = firebase.database().ref("2018selections").orderByKey();
 
 var turnArray = [];
 turnArray.length = 0;
 var emailArray = [];
 emailArray.length = 0;
 var childData='';
+
+
 query.once("value")
   .then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
@@ -15,14 +15,22 @@ query.once("value")
       var turnEmail = childSnapshot.val().playerEmail;
       turnArray.push(key);
       emailArray.push(turnEmail);
-  });
-    populateArray();
+  })
+  populateArray();
+  makeHtmlListForPage();
+});
+
+// queryTeams.once("value")
+//   .then(function(snapshot) {
+//     snapshot.forEach(function(childSnapshot) {
+//       var teamKey = childSnapshot.val().selTeam;
+//       teamArray.push(teamKey);
+//   });
+// });
+
 
     // populateEmailDB();
     // turn on when creating new email Sequence
-
-    makeHtmlListForPage();
-});
 
 //  ++++++++++++++++++++++++ Populate Turns Sequence ++++++++++++++++++++++++++++++++++ 
 
@@ -66,6 +74,14 @@ for (var i = 0; i < turns.length; i++) {
     if(i == currentTurn){
         htmlTurns = htmlTurns + "<li class='turns' style='background-color:yellow';>" + turns[i] + "</li>";
         htmlWhoseTurn = '<font color="red">' + '<u>' + turns[i] + '</u>' + '</font>' + ' is on the clock!';
+        var ref = firebase.database().ref("2018selections");
+        var pick;
+        ref.once("value")
+        .then(function(snapshot) {
+            pick = snapshot.numChildren(); 
+            console.log(pick);
+            updateTable(pick);
+        });
     }
     else{
         htmlTurns = htmlTurns + "<li class='turns';>" + turns[i] + "</li>";
@@ -73,6 +89,31 @@ for (var i = 0; i < turns.length; i++) {
 };
         document.getElementById('draft-order').innerHTML = htmlTurns;
         document.getElementById('whose-turn').innerHTML = htmlWhoseTurn;
+};
+
+//  ++++++++++++++++++++++++ Update Table function ++++++++++++++++++++++++++++++++++ 
+
+function updateTable(pick) {
+  var teamArray = [];
+  teamArray.length = 0;
+
+  queryTeams.once("value")
+    .then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+        var teamKey = childSnapshot.val().selTeam;
+        teamArray.push(teamKey);
+    });
+
+
+  for (var i = 1; i < pick+1; i++) {
+    if(pick > 0){
+        var tableCell = 'pick'+ i;
+        document.getElementById(tableCell).textContent = teamArray[i-1];
+    }
+    else{
+    }
+  };
+  });
 };
 
 
