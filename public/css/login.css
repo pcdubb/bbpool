@@ -1,5 +1,9 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto);
 
+
+/* Apply CSS to iOS affected versions only */
+body.iosBugFixCaret.modal-open { position: fixed; width: 100%; }
+
 /****** LOGIN MODAL ******/
 .loginmodal-container {
   padding: 30px;
@@ -21,7 +25,7 @@
 
 .loginmodal-container input[type=submit] {
   width: 100%;
-  display: block;
+  display: none;
   margin-bottom: 10px;
   position: relative;
 }
@@ -86,7 +90,8 @@
   color: #666;
   font-weight: 400;
   text-align: center;
-  display: inline-block;
+  /*display: inline-block;*/
+  display: none;
   opacity: 0.6;
   transition: opacity ease 0.5s;
 } 
