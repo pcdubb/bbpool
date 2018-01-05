@@ -66,6 +66,7 @@ function updateStatus(){
         document.getElementById('navSignIn').textContent = "Sign Out";
         $('#navSignIn').attr('data-target','#logout-modal');
         document.getElementById('navUpName').textContent = "Update User Name";
+        document.getElementById('modal-password-reset').textContent = "";
         
 
 
@@ -78,13 +79,37 @@ function updateStatus(){
         $('#navSignIn').attr('data-target','#login-modal');
         document.getElementById('welcomeUser').textContent = '';
         document.getElementById('navUpName').textContent = '';
+        document.getElementById('modal-password-reset').textContent = "Forgot/Reset Password";
     }
     });
 
 }
 
-// ----------------------------------------------------------- //
+// ------------------Reset Password--------------------------- //
 
+function resetPassword(){
+    emailAddress = $('#pw-modal-email').val();
+        var auth = firebase.auth();
+        console.log('in password reset function');
+        auth.sendPasswordResetEmail(emailAddress).then(function() {
+        // Email sent.
+        }).catch(function(error) {
+        // An error happened.
+        });
+        updateStatus();
+    };
+// -----------------------forgot pw listener---------------------------- //
+
+
+// $(document).on('#changePasswordModal', function () {
+//     var pw_modal_email = $('#pw-modal-email').val();
+//     resetPassword(pw_modal_email);
+// });
+
+
+
+
+// ----------------------------------------------------------- //
 function initApp() {
     // TODO
 }
@@ -98,7 +123,16 @@ $(document).on('hide.bs.modal','#login-modal', function () {
                 signIn(modal_email, modal_password)
 });
 
-// ----------------------------------------------------------- //
+// -----------------------signin listener---------------------------- //
+
+
+$(document).on('hide.bs.modal','#login-modal', function () {
+    var modal_password = $('#modal-password').val();
+    var modal_email = $('#modal-email').val();
+    signIn(modal_email, modal_password)
+});
+
+// -----------------------signout listener--------------------------- //
 
 $(document).on('hide.bs.modal','#logout-modal', function () {
     signOut();

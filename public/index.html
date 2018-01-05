@@ -56,6 +56,8 @@ cursor: pointer; cursor: hand;
         <li><a href="#" id='disNameUpdate' data-target="#displayNameModal"><div id="navUpName"></div></a></li>
         <li><a href="#" id='navSignIn' data-toggle="modal" data-target="#login-modal">
         <div id="navSign">Sign In or Register</div></a></li>
+        <li><a href="#" id="modal-password-reset"  data-toggle="modal" data-target="#changePasswordModal">
+        <div id="forgot">Forgot/Reset Password</div></a></div></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
@@ -254,10 +256,7 @@ cursor: pointer; cursor: hand;
                  <div id="signin-errors"></div>
                 <button type="button" value="Login" data-dismiss="modal" aria-hidden="true" id="modal-sign-in" name="signin" class="login loginmodal-submit" style="display: block; width: 100%;">Login</button>
             </form>
-                
-            <div class="login-help">
-                <a href="#">Register</a> - <a href="#">Forgot Password</a>
-            </div>
+
             </div>
         </div>
     </div>
@@ -278,6 +277,36 @@ cursor: pointer; cursor: hand;
 
 
 <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!--Change Password Modal-->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                    <h1>Reset Password</h1><br>
+                <form id='formfield' method="post">
+                    <input type="text" id="pw-modal-email" name="pwemail" placeholder="Registered User Email"/>
+                    <button onclick="resetPassword();return false" type="button" class="btn btn-primary" aria-hidden="true" value="Logout" data-dismiss="modal" id="modal-password-reset" style="display: block; width: 100%;">Send Password Reset Email</button>
+                </form>
+
+
+
+
+
+                <!-- <div class="loginmodal-container">
+                    <h1>Enter your email address</h1><br>
+                <form>
+                    <button type="button" data-dismiss="modal" onclick="resetPassword();return false;" value="Logout" aria-hidden="true" id="modal-sign-out" name="signout" class="login loginmodal-submit" style="display: block; width: 100%;">Send Reset</button>
+                </form> -->
+                </div>
+            </div>
+        </div>
+    
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
 
 <!--Change displayName Modal-->
 
