@@ -1,0 +1,1413 @@
+
+{
+    "School": "University at Albany, SUNY(Albany)",
+    "Nickname": "Great Danes"
+},
+{
+    "School": "Binghamton University(Binghamton)",
+    "Nickname": "Bearcats"
+},
+{
+    "School": "University of Hartford(Hartford)",
+    "Nickname": "Hawks"
+},
+{
+    "School": "University of Maine (Maine)",
+    "Nickname": "Black Bears"
+},
+{
+    "School": "University of Maryland, Baltimore County(UMBC)",
+    "Nickname": "Retrievers"
+},
+{
+    "School": "University of Massachusetts Lowell (UMass Lowell)",
+    "Nickname": "River Hawks"
+},
+{
+    "School": "University of New Hampshire(New Hampshire)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Stony Brook University (Stony Brook)",
+    "Nickname": "Seawolves"
+},
+{
+    "School": "University of Vermont(Vermont)",
+    "Nickname": "Catamounts"
+},
+{
+    "School": "University of Central Florida(UCF)",
+    "Nickname": "Knights"
+},
+{
+    "School": "University of Cincinnati(Cincinnati)",
+    "Nickname": "Bearcats"
+},
+{
+    "School": "University of Connecticut(UConn)",
+    "Nickname": "Huskies"
+},
+{
+    "School": "East Carolina University (East Carolina)",
+    "Nickname": "Pirates"
+},
+{
+    "School": "University of Houston(Houston)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "University of Memphis(Memphis)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of South Florida(USF)",
+    "Nickname": "Bulls"
+},
+{
+    "School": "Southern Methodist University (SMU)",
+    "Nickname": "Mustangs"
+},
+{
+    "School": "Temple University(Temple)",
+    "Nickname": "Owls"
+},
+{
+    "School": "Tulane University(Tulane)",
+    "Nickname": "Green Wave"
+},
+{
+    "School": "University of Tulsa (Tulsa)",
+    "Nickname": "Golden Hurricane"
+},
+{
+    "School": "Wichita State University(Wichita State)",
+    "Nickname": "Shockers"
+},
+{
+    "School": "Boston College",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Clemson University(Clemson)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Duke University(Duke)",
+    "Nickname": "Blue Devils"
+},
+{
+    "School": "Florida State University(Florida State)",
+    "Nickname": "Seminoles"
+},
+{
+    "School": "Georgia Institute of Technology(Georgia Tech)",
+    "Nickname": "Yellow Jackets"
+},
+{
+    "School": "University of Louisville(Louisville)",
+    "Nickname": "Cardinals"
+},
+{
+    "School": "University of Miami (Miami)",
+    "Nickname": "Hurricanes"
+},
+{
+    "School": "University of North Carolina at Chapel Hill(North Carolina)",
+    "Nickname": "Tar Heels"
+},
+{
+    "School": "North Carolina State University(NC State)",
+    "Nickname": "Wolfpack"
+},
+{
+    "School": "University of Notre Dame(Notre Dame)",
+    "Nickname": "Fighting Irish"
+},
+{
+    "School": "University of Pittsburgh (Pitt)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Syracuse University(Syracuse)",
+    "Nickname": "Orange"
+},
+{
+    "School": "University of Virginia (Virginia)",
+    "Nickname": "Cavaliers"
+},
+{
+    "School": "Virginia Polytechnic Institute and State University(Virginia Tech)",
+    "Nickname": "Hokies"
+},
+{
+    "School": "Wake Forest University (Wake Forest)",
+    "Nickname": "Demon Deacons"
+},
+{
+    "School": "Florida Gulf Coast University(Florida Gulf Coast)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Jacksonville University(Jacksonville)",
+    "Nickname": "Dolphins"
+},
+{
+    "School": "Kennesaw State University(Kennesaw State)",
+    "Nickname": "Owls"
+},
+{
+    "School": "Lipscomb University(Lipscomb)",
+    "Nickname": "Bisons"
+},
+{
+    "School": "New Jersey Institute of Technology(NJIT)",
+    "Nickname": "Highlanders"
+},
+{
+    "School": "University of North Florida(North Florida)",
+    "Nickname": "Ospreys"
+},
+{
+    "School": "University of South Carolina Upstate (USC Upstate)",
+    "Nickname": "Spartans"
+},
+{
+    "School": "Stetson University(Stetson)",
+    "Nickname": "Hatters"
+},
+{
+    "School": "Davidson College(Davidson)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "University of Dayton (Dayton)",
+    "Nickname": "Flyers"
+},
+{
+    "School": "Duquesne University(Duquesne)",
+    "Nickname": "Dukes"
+},
+{
+    "School": "Fordham University(Fordham)",
+    "Nickname": "Rams"
+},
+{
+    "School": "George Mason University(George Mason)",
+    "Nickname": "Patriots"
+},
+{
+    "School": "George Washington University(George Washington)",
+    "Nickname": "Colonials"
+},
+{
+    "School": "La Salle University",
+    "Nickname": "Explorers"
+},
+{
+    "School": "(La Salle)",
+    "Nickname": ""
+},
+{
+    "School": "University of Massachusetts Amherst(UMass)",
+    "Nickname": "Minutemen"
+},
+{
+    "School": "University of Rhode Island(Rhode Island)",
+    "Nickname": "Rams"
+},
+{
+    "School": "University of Richmond(Richmond)",
+    "Nickname": "Spiders"
+},
+{
+    "School": "St. Bonaventure University (St. Bonaventure)",
+    "Nickname": "Bonnies"
+},
+{
+    "School": "Saint Joseph's University (St. Joseph's)",
+    "Nickname": "Hawks"
+},
+{
+    "School": "Saint Louis University (Saint Louis)",
+    "Nickname": "Billikens"
+},
+{
+    "School": "Virginia Commonwealth University(VCU)SHAKA SMART",
+    "Nickname": "Rams"
+},
+{
+    "School": "Butler University(Butler)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Creighton University(Creighton)",
+    "Nickname": "Bluejays"
+},
+{
+    "School": "DePaul University(DePaul)",
+    "Nickname": "Blue Demons"
+},
+{
+    "School": "Georgetown University(Georgetown)",
+    "Nickname": "Hoyas"
+},
+{
+    "School": "Marquette University(Marquette)",
+    "Nickname": "Golden Eagles"
+},
+{
+    "School": "Providence College(Providence)",
+    "Nickname": "Friars"
+},
+{
+    "School": "St. John's University (St. John's)",
+    "Nickname": "Red Storm"
+},
+{
+    "School": "Seton Hall University (Seton Hall)",
+    "Nickname": "Pirates"
+},
+{
+    "School": "Villanova University(Villanova)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Xavier University(Xavier)",
+    "Nickname": "Musketeers"
+},
+{
+    "School": "Eastern Washington University(Eastern Washington)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "University of Idaho (Idaho)",
+    "Nickname": "Vandals"
+},
+{
+    "School": "Idaho State University (Idaho State)",
+    "Nickname": "Bengals"
+},
+{
+    "School": "University of Montana(Montana)",
+    "Nickname": "Grizzlies"
+},
+{
+    "School": "Montana State University(Montana State)",
+    "Nickname": "Bobcats"
+},
+{
+    "School": "University of North Dakota(North Dakota)",
+    "Nickname": "Fighting Hawks"
+},
+{
+    "School": "Northern Arizona University(Northern Arizona)",
+    "Nickname": "Lumberjacks"
+},
+{
+    "School": "University of Northern Colorado(Northern Colorado)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Portland State University(Portland State)",
+    "Nickname": "Vikings"
+},
+{
+    "School": "California State University, Sacramento(Sacramento State)",
+    "Nickname": "Hornets"
+},
+{
+    "School": "Southern Utah University(Southern Utah)",
+    "Nickname": "Thunderbirds"
+},
+{
+    "School": "Weber State University(Weber State)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Campbell University(Campbell)",
+    "Nickname": "Fighting Camels"
+},
+{
+    "School": "Charleston Southern University(Charleston Southern)",
+    "Nickname": "Buccaneers"
+},
+{
+    "School": "Gardner–Webb University(Gardner–Webb)",
+    "Nickname": "Runnin' Bulldogs"
+},
+{
+    "School": "High Point University (High Point)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Liberty University(Liberty)",
+    "Nickname": "Flames"
+},
+{
+    "School": "Longwood University(Longwood)",
+    "Nickname": "Lancers"
+},
+{
+    "School": "Presbyterian College(Presbyterian)",
+    "Nickname": "Blue Hose"
+},
+{
+    "School": "Radford University(Radford)",
+    "Nickname": "Highlanders"
+},
+{
+    "School": "University of North Carolina at Asheville (UNC Asheville)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Winthrop University(Winthrop)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "University of Illinois at Urbana–Champaign(Illinois)",
+    "Nickname": "Fighting Illini"
+},
+{
+    "School": "Indiana University Bloomington(Indiana)",
+    "Nickname": "Hoosiers"
+},
+{
+    "School": "University of Iowa (Iowa)",
+    "Nickname": "Hawkeyes"
+},
+{
+    "School": "University of Maryland, College Park(Maryland)",
+    "Nickname": "Terrapins"
+},
+{
+    "School": "University of Michigan(Michigan)",
+    "Nickname": "Wolverines"
+},
+{
+    "School": "Michigan State University(Michigan State)",
+    "Nickname": "Spartans"
+},
+{
+    "School": "University of Minnesota(Minnesota)",
+    "Nickname": "Golden Gophers"
+},
+{
+    "School": "University of Nebraska–Lincoln(Nebraska)",
+    "Nickname": "Cornhuskers"
+},
+{
+    "School": "Northwestern University(Northwestern)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Ohio State University (Ohio State)",
+    "Nickname": "Buckeyes"
+},
+{
+    "School": "Pennsylvania State University(Penn State)",
+    "Nickname": "Nittany Lions"
+},
+{
+    "School": "Purdue University(Purdue)",
+    "Nickname": "Boilermakers"
+},
+{
+    "School": "Rutgers University–New Brunswick(Rutgers)",
+    "Nickname": "Scarlet Knights"
+},
+{
+    "School": "University of Wisconsin–Madison(Wisconsin)",
+    "Nickname": "Badgers"
+},
+{
+    "School": "Baylor University(Baylor)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Iowa State University (Iowa State)",
+    "Nickname": "Cyclones"
+},
+{
+    "School": "University of Kansas (Kansas)",
+    "Nickname": "Jayhawks"
+},
+{
+    "School": "Kansas State University(Kansas State)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "University of Oklahoma(Oklahoma)",
+    "Nickname": "Sooners"
+},
+{
+    "School": "Oklahoma State University–Stillwater(Oklahoma State)",
+    "Nickname": "Cowboys"
+},
+{
+    "School": "University of Texas at Austin(Texas)",
+    "Nickname": "Longhorns"
+},
+{
+    "School": "Texas Christian University (TCU)",
+    "Nickname": "Horned Frogs"
+},
+{
+    "School": "Texas Tech University (Texas Tech)",
+    "Nickname": "Red Raiders"
+},
+{
+    "School": "West Virginia University (West Virginia)",
+    "Nickname": "Mountaineers"
+},
+{
+    "School": "California Polytechnic State University(Cal Poly)",
+    "Nickname": "Mustangs"
+},
+{
+    "School": "California State University, Fullerton (Cal State Fullerton)",
+    "Nickname": "Titans"
+},
+{
+    "School": "California State University, Northridge (Cal State Northridge)",
+    "Nickname": "Matadors"
+},
+{
+    "School": "University of Hawai_i at M_noa(Hawaii)",
+    "Nickname": "Rainbow Warriors"
+},
+{
+    "School": "California State University, Long Beach (Long Beach State)",
+    "Nickname": "49ers"
+},
+{
+    "School": "University of California, Davis(UC Davis)",
+    "Nickname": "Aggies"
+},
+{
+    "School": "University of California, Irvine(UC Irvine)",
+    "Nickname": "Anteaters"
+},
+{
+    "School": "University of California, Riverside (UC Riverside)",
+    "Nickname": "Highlanders"
+},
+{
+    "School": "University of California, Santa Barbara (UC Santa Barbara)",
+    "Nickname": "Gauchos"
+},
+{
+    "School": "College of Charleston(Charleston)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "University of Delaware(Delaware)",
+    "Nickname": "Fightin' Blue Hens"
+},
+{
+    "School": "Drexel University(Drexel)",
+    "Nickname": "Dragons"
+},
+{
+    "School": "Elon University(Elon)",
+    "Nickname": "Phoenix"
+},
+{
+    "School": "Hofstra University(Hofstra)",
+    "Nickname": "Pride"
+},
+{
+    "School": "James Madison University(James Madison)",
+    "Nickname": "Dukes"
+},
+{
+    "School": "Northeastern University(Northeastern)",
+    "Nickname": "Huskies"
+},
+{
+    "School": "Towson University(Towson)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of North Carolina at Wilmington(UNC Wilmington)",
+    "Nickname": "Seahawks"
+},
+{
+    "School": "College of William & Mary(William & Mary)",
+    "Nickname": "Tribe"
+},
+{
+    "School": "University of North Carolina at Charlotte(Charlotte)",
+    "Nickname": "49ers"
+},
+{
+    "School": "Florida Atlantic University(Florida Atlantic)",
+    "Nickname": "Owls"
+},
+{
+    "School": "Florida International University (FIU)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Louisiana Tech University(Louisiana Tech)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Marshall University(Marshall)",
+    "Nickname": "Thundering Herd"
+},
+{
+    "School": "Middle Tennessee State University(Middle Tennessee)",
+    "Nickname": "Blue Raiders"
+},
+{
+    "School": "University of North Texas(North Texas)",
+    "Nickname": "Mean Green"
+},
+{
+    "School": "Old Dominion University (Old Dominion)",
+    "Nickname": "Monarchs"
+},
+{
+    "School": "Rice University(Rice)",
+    "Nickname": "Owls"
+},
+{
+    "School": "University of Southern Mississippi(Southern Miss)",
+    "Nickname": "Golden Eagles"
+},
+{
+    "School": "University of Alabama at Birmingham(UAB)",
+    "Nickname": "Blazers"
+},
+{
+    "School": "University of Texas at El Paso(UTEP)",
+    "Nickname": "Miners"
+},
+{
+    "School": "University of Texas at San Antonio (UTSA)",
+    "Nickname": "Roadrunners"
+},
+{
+    "School": "Western Kentucky University(Western Kentucky)",
+    "Nickname": "Hilltoppers"
+},
+{
+    "School": "Cleveland State University(Cleveland State)",
+    "Nickname": "Vikings"
+},
+{
+    "School": "University of Detroit Mercy(Detroit)",
+    "Nickname": "Titans"
+},
+{
+    "School": "Indiana University – Purdue University Indianapolis(IUPUI)",
+    "Nickname": "Jaguars"
+},
+{
+    "School": "University of Wisconsin-Milwaukee(Milwaukee)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Northern Kentucky University(Northern Kentucky)",
+    "Nickname": "Norse"
+},
+{
+    "School": "Oakland University(Oakland)",
+    "Nickname": "Golden Grizzlies"
+},
+{
+    "School": "University of Illinois at Chicago (UIC)",
+    "Nickname": "Flames"
+},
+{
+    "School": "University of Wisconsin–Green Bay(Green Bay)",
+    "Nickname": "Phoenix"
+},
+{
+    "School": "Wright State University(Wright State)",
+    "Nickname": "Raiders"
+},
+{
+    "School": "Youngstown State University(Youngstown State)",
+    "Nickname": "Penguins"
+},
+{
+    "School": "Brown University(Brown)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Columbia University(Columbia)",
+    "Nickname": "Lions"
+},
+{
+    "School": "Cornell University(Cornell)",
+    "Nickname": "Big Red"
+},
+{
+    "School": "Dartmouth College(Dartmouth)",
+    "Nickname": "Big Green"
+},
+{
+    "School": "Harvard University(Harvard)",
+    "Nickname": "Crimson"
+},
+{
+    "School": "University of Pennsylvania(Penn)",
+    "Nickname": "Quakers"
+},
+{
+    "School": "Princeton University(Princeton)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Yale University(Yale)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Canisius College(Canisius)",
+    "Nickname": "Golden Griffins"
+},
+{
+    "School": "Fairfield University(Fairfield)",
+    "Nickname": "Stags"
+},
+{
+    "School": "Iona College(Iona)",
+    "Nickname": "Gaels"
+},
+{
+    "School": "Manhattan College(Manhattan)",
+    "Nickname": "Jaspers"
+},
+{
+    "School": "Marist College(Marist)",
+    "Nickname": "Red Foxes"
+},
+{
+    "School": "Monmouth University(Monmouth)",
+    "Nickname": "Hawks"
+},
+{
+    "School": "Niagara University(Niagara)",
+    "Nickname": "Purple Eagles"
+},
+{
+    "School": "Quinnipiac University(Quinnipiac)",
+    "Nickname": "Bobcats"
+},
+{
+    "School": "Rider University(Rider)",
+    "Nickname": "Broncs"
+},
+{
+    "School": "Saint Peter's University (Saint Peter's)",
+    "Nickname": "Peacocks"
+},
+{
+    "School": "Siena College(Siena)",
+    "Nickname": "Saints"
+},
+{
+    "School": "University of Akron (Akron)",
+    "Nickname": "Zips"
+},
+{
+    "School": "Ball State University (Ball State)",
+    "Nickname": "Cardinals"
+},
+{
+    "School": "Bowling Green State University(Bowling Green)",
+    "Nickname": "Falcons"
+},
+{
+    "School": "University at Buffalo (Buffalo)",
+    "Nickname": "Bulls"
+},
+{
+    "School": "Central Michigan University(Central Michigan)",
+    "Nickname": "Chippewas"
+},
+{
+    "School": "Eastern Michigan University(Eastern Michigan)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Kent State University (Kent State)",
+    "Nickname": "Golden Flashes"
+},
+{
+    "School": "Miami University (Ohio)",
+    "Nickname": "RedHawks"
+},
+{
+    "School": "Northern Illinois University(Northern Illinois)",
+    "Nickname": "Huskies"
+},
+{
+    "School": "Ohio University(Ohio)",
+    "Nickname": "Bobcats"
+},
+{
+    "School": "University of Toledo (Toledo)",
+    "Nickname": "Rockets"
+},
+{
+    "School": "Western Michigan University(Western Michigan)",
+    "Nickname": "Broncos"
+},
+{
+    "School": "Bethune–Cookman University(Bethune–Cookman)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Coppin State University(Coppin State)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Delaware State University(Delaware State)",
+    "Nickname": "Hornets"
+},
+{
+    "School": "Florida Agricultural and Mechanical University(Florida A&M)",
+    "Nickname": "Rattlers"
+},
+{
+    "School": "Hampton University(Hampton)",
+    "Nickname": "Pirates"
+},
+{
+    "School": "Howard University(Howard)",
+    "Nickname": "Bison"
+},
+{
+    "School": "University of Maryland Eastern Shore(UMES)",
+    "Nickname": "Hawks"
+},
+{
+    "School": "Morgan State University(Morgan State)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Norfolk State University(Norfolk State)",
+    "Nickname": "Spartans"
+},
+{
+    "School": "North Carolina Agricultural and Technical State University (North Carolina A&T)",
+    "Nickname": "Aggies"
+},
+{
+    "School": "North Carolina Central University(NCCU)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Savannah State University",
+    "Nickname": "Tigers"
+},
+{
+    "School": "South Carolina State University(SC State)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Bradley University(Bradley)",
+    "Nickname": "Braves"
+},
+{
+    "School": "Drake University(Drake)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "University of Evansville(Evansville)",
+    "Nickname": "Purple Aces"
+},
+{
+    "School": "Illinois State University(Illinois State)",
+    "Nickname": "Redbirds"
+},
+{
+    "School": "Indiana State University(Indiana State)",
+    "Nickname": "Sycamores"
+},
+{
+    "School": "Loyola University Chicago (Loyola Chicago)",
+    "Nickname": "Ramblers"
+},
+{
+    "School": "Missouri State University(Missouri State)",
+    "Nickname": "Bears"
+},
+{
+    "School": "University of Northern Iowa(Northern Iowa)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Southern Illinois University Carbondale(Southern Illinois)",
+    "Nickname": "Salukis"
+},
+{
+    "School": "Valparaiso University(Valparaiso)",
+    "Nickname": "Crusaders"
+},
+{
+    "School": "United States Air Force Academy(Air Force)",
+    "Nickname": "Falcons"
+},
+{
+    "School": "Boise State University (Boise State)",
+    "Nickname": "Broncos"
+},
+{
+    "School": "Colorado State University(Colorado State)",
+    "Nickname": "Rams"
+},
+{
+    "School": "California State University, Fresno (Fresno State)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "University of Nevada, Reno(Nevada)",
+    "Nickname": "Wolf Pack"
+},
+{
+    "School": "University of New Mexico(New Mexico)",
+    "Nickname": "Lobos"
+},
+{
+    "School": "San Diego State University (San Diego State)",
+    "Nickname": "Aztecs"
+},
+{
+    "School": "San Jose State University (San Jose State)",
+    "Nickname": "Spartans"
+},
+{
+    "School": "University of Nevada, Las Vegas (UNLV)",
+    "Nickname": "Runnin' Rebels"
+},
+{
+    "School": "Utah State University (Utah State)",
+    "Nickname": "Aggies"
+},
+{
+    "School": "University of Wyoming(Wyoming)",
+    "Nickname": "Cowboys"
+},
+{
+    "School": "Bryant University(Bryant)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Central Connecticut State University(Central Connecticut)",
+    "Nickname": "Blue Devils"
+},
+{
+    "School": "Fairleigh Dickinson University(Fairleigh Dickinson)",
+    "Nickname": "Knights"
+},
+{
+    "School": "Long Island University (Brooklyn Campus) (LIU Brooklyn)",
+    "Nickname": "Blackbirds"
+},
+{
+    "School": "Mount St. Mary's University(Mount St. Mary's)",
+    "Nickname": "Mountaineers"
+},
+{
+    "School": "Robert Morris University(Robert Morris)",
+    "Nickname": "Colonials"
+},
+{
+    "School": "Sacred Heart University(Sacred Heart)",
+    "Nickname": "Pioneers"
+},
+{
+    "School": "St. Francis College (St. Francis Brooklyn)",
+    "Nickname": "Terriers"
+},
+{
+    "School": "Saint Francis University (St. Francis (PA))",
+    "Nickname": "Red Flash"
+},
+{
+    "School": "Wagner College(Wagner)",
+    "Nickname": "Seahawks"
+},
+{
+    "School": "Austin Peay State University(Austin Peay)",
+    "Nickname": "Governors"
+},
+{
+    "School": "Belmont University(Belmont)",
+    "Nickname": "Bruins"
+},
+{
+    "School": "Eastern Illinois University(Eastern Illinois)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Eastern Kentucky University(Eastern Kentucky)",
+    "Nickname": "Colonels"
+},
+{
+    "School": "Jacksonville State University(Jacksonville State)",
+    "Nickname": "Gamecocks"
+},
+{
+    "School": "Morehead State University(Morehead State)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Murray State University(Murray State)",
+    "Nickname": "Racers"
+},
+{
+    "School": "Southeast Missouri State University (SE Missouri State)",
+    "Nickname": "Redhawks"
+},
+{
+    "School": "Southern Illinois University Edwardsville(SIU Edwardsville)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "University of Tennessee at Martin (UT–Martin)",
+    "Nickname": "Skyhawks"
+},
+{
+    "School": "Tennessee State University(Tennessee State)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Tennessee Technological University(Tennessee Tech)",
+    "Nickname": "Golden Eagles"
+},
+{
+    "School": "University of Arizona(Arizona)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Arizona State University(Arizona State)",
+    "Nickname": "Sun Devils"
+},
+{
+    "School": "University of California, Berkeley(California)",
+    "Nickname": "Golden Bears"
+},
+{
+    "School": "University of Colorado Boulder(Colorado)",
+    "Nickname": "Buffaloes"
+},
+{
+    "School": "University of Oregon (Oregon)",
+    "Nickname": "Ducks"
+},
+{
+    "School": "Oregon State University(Oregon State)",
+    "Nickname": "Beavers"
+},
+{
+    "School": "Stanford University(Stanford)",
+    "Nickname": "Cardinal"
+},
+{
+    "School": "University of California, Los Angeles (UCLA)",
+    "Nickname": "Bruins"
+},
+{
+    "School": "University of Southern California (USC)",
+    "Nickname": "Trojans"
+},
+{
+    "School": "University of Utah (Utah)",
+    "Nickname": "Utes"
+},
+{
+    "School": "University of Washington(Washington)",
+    "Nickname": "Huskies"
+},
+{
+    "School": "Washington State University(Washington State)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "American University(American)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "United States Military Academy(Army)",
+    "Nickname": "Black Knights"
+},
+{
+    "School": "Boston University",
+    "Nickname": "Terriers"
+},
+{
+    "School": "Bucknell University(Bucknell)",
+    "Nickname": "Bison"
+},
+{
+    "School": "Colgate University(Colgate)",
+    "Nickname": "Raiders"
+},
+{
+    "School": "College of the Holy Cross (Holy Cross)",
+    "Nickname": "Crusaders"
+},
+{
+    "School": "Lafayette College(Lafayette)",
+    "Nickname": "Leopards"
+},
+{
+    "School": "Lehigh University(Lehigh)",
+    "Nickname": "Mountain Hawks"
+},
+{
+    "School": "Loyola University Maryland (Loyola MD)",
+    "Nickname": "Greyhounds"
+},
+{
+    "School": "United States Naval Academy(Navy)",
+    "Nickname": "Midshipmen"
+},
+{
+    "School": "University of Alabama(Alabama)",
+    "Nickname": "Crimson Tide"
+},
+{
+    "School": "University of Arkansas(Arkansas)",
+    "Nickname": "Razorbacks"
+},
+{
+    "School": "Auburn University(Auburn)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of Florida (Florida)",
+    "Nickname": "Gators"
+},
+{
+    "School": "University of Georgia(Georgia)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "University of Kentucky(Kentucky)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "Louisiana State University (LSU)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of Mississippi (Ole Miss)",
+    "Nickname": "Rebels"
+},
+{
+    "School": "Mississippi State University(Mississippi State)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "University of Missouri(Missouri)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of South Carolina(South Carolina)",
+    "Nickname": "Gamecocks"
+},
+{
+    "School": "University of Tennessee(Tennessee)",
+    "Nickname": "Volunteers"
+},
+{
+    "School": "Texas A&M University (Texas A&M)",
+    "Nickname": "Aggies"
+},
+{
+    "School": "Vanderbilt University(Vanderbilt)",
+    "Nickname": "Commodores"
+},
+{
+    "School": "University of Tennessee at Chattanooga(Chattanooga)",
+    "Nickname": "Mocs"
+},
+{
+    "School": "The Citadel",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "East Tennessee State University(East Tennessee State)",
+    "Nickname": "Buccaneers"
+},
+{
+    "School": "Furman University(Furman)",
+    "Nickname": "Paladins"
+},
+{
+    "School": "Mercer University(Mercer)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Samford University(Samford)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "University of North Carolina at Greensboro(UNC Greensboro)",
+    "Nickname": "Spartans"
+},
+{
+    "School": "Virginia Military Institute (VMI)",
+    "Nickname": "Keydets"
+},
+{
+    "School": "Western Carolina University(Western Carolina)",
+    "Nickname": "Catamounts"
+},
+{
+    "School": "Wofford College(Wofford)",
+    "Nickname": "Terriers"
+},
+{
+    "School": "Abilene Christian University(Abilene Christian)",
+    "Nickname": "Wildcats"
+},
+{
+    "School": "University of Central Arkansas(Central Arkansas)",
+    "Nickname": "Bears"
+},
+{
+    "School": "Houston Baptist University(Houston Baptist)",
+    "Nickname": "Huskies"
+},
+{
+    "School": "University of the Incarnate Word(Incarnate Word)",
+    "Nickname": "Cardinals"
+},
+{
+    "School": "Lamar University(Lamar)",
+    "Nickname": "Cardinals"
+},
+{
+    "School": "McNeese State University(McNeese State)",
+    "Nickname": "Cowboys"
+},
+{
+    "School": "University of New Orleans(New Orleans)",
+    "Nickname": "Privateers"
+},
+{
+    "School": "Nicholls State University(Nicholls State)",
+    "Nickname": "Colonels"
+},
+{
+    "School": "Northwestern State University(Northwestern State)",
+    "Nickname": "Demons"
+},
+{
+    "School": "Sam Houston State University(Sam Houston State)",
+    "Nickname": "Bearkats"
+},
+{
+    "School": "Southeastern Louisiana University (SE Louisiana)",
+    "Nickname": "Lions"
+},
+{
+    "School": "Stephen F. Austin State University(Stephen F. Austin)",
+    "Nickname": "Lumberjacks"
+},
+{
+    "School": "Texas A&M University-Corpus Christi",
+    "Nickname": "Islanders"
+},
+{
+    "School": "Alabama Agricultural and Mechanical University",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "(Alabama A&M)",
+    "Nickname": ""
+},
+{
+    "School": "Alabama State University(Alabama State)",
+    "Nickname": "Hornets"
+},
+{
+    "School": "Alcorn State University(Alcorn State)",
+    "Nickname": "Braves"
+},
+{
+    "School": "University of Arkansas at Pine Bluff (Arkansas–Pine Bluff)",
+    "Nickname": "Golden Lions"
+},
+{
+    "School": "Grambling State University(Grambling State)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Jackson State University(Jackson State)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Mississippi Valley State University (Miss Valley State)",
+    "Nickname": "Delta Devils"
+},
+{
+    "School": "Prairie View A&M University(Prairie View A&M)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "Southern University(Southern)",
+    "Nickname": "Jaguars"
+},
+{
+    "School": "Texas Southern University (Texas Southern)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "University of Denver (Denver)",
+    "Nickname": "Pioneers"
+},
+{
+    "School": "Indiana University – Purdue University Fort Wayne (Fort Wayne)",
+    "Nickname": "Mastodons"
+},
+{
+    "School": "North Dakota State University(North Dakota State)",
+    "Nickname": "Bison"
+},
+{
+    "School": "University of Nebraska Omaha (Omaha)",
+    "Nickname": "Mavericks"
+},
+{
+    "School": "Oral Roberts University (Oral Roberts)",
+    "Nickname": "Golden Eagles"
+},
+{
+    "School": "University of South Dakota(South Dakota)",
+    "Nickname": "Coyotes"
+},
+{
+    "School": "South Dakota State University(South Dakota State)",
+    "Nickname": "Jackrabbits"
+},
+{
+    "School": "Western Illinois University(Western Illinois)",
+    "Nickname": "Leathernecks"
+},
+{
+    "School": "Appalachian State University(Appalachian State)",
+    "Nickname": "Mountaineers"
+},
+{
+    "School": "Arkansas State University(Arkansas State)",
+    "Nickname": "Red Wolves"
+},
+{
+    "School": "Coastal Carolina University(Coastal Carolina)",
+    "Nickname": "Chanticleers"
+},
+{
+    "School": "Georgia Southern University(Georgia Southern)",
+    "Nickname": "Eagles"
+},
+{
+    "School": "Georgia State University(Georgia State)",
+    "Nickname": "Panthers"
+},
+{
+    "School": "University of Arkansas at Little Rock (Little Rock)",
+    "Nickname": "Trojans"
+},
+{
+    "School": "University of Louisiana at Lafayette (UL–Lafayette)",
+    "Nickname": "Ragin' Cajuns"
+},
+{
+    "School": "University of Louisiana at Monroe (UL–Monroe)",
+    "Nickname": "Warhawks"
+},
+{
+    "School": "University of South Alabama(South Alabama)",
+    "Nickname": "Jaguars"
+},
+{
+    "School": "University of Texas at Arlington (UT–Arlington)",
+    "Nickname": "Mavericks"
+},
+{
+    "School": "Texas State University (Texas State)",
+    "Nickname": "Bobcats"
+},
+{
+    "School": "Troy University(Troy)",
+    "Nickname": "Trojans"
+},
+{
+    "School": "Brigham Young University (BYU)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "Gonzaga University(Gonzaga)",
+    "Nickname": "Bulldogs"
+},
+{
+    "School": "Loyola Marymount University(Loyola Marymount)",
+    "Nickname": "Lions"
+},
+{
+    "School": "University of the Pacific (Pacific)",
+    "Nickname": "Tigers"
+},
+{
+    "School": "Pepperdine University(Pepperdine)",
+    "Nickname": "Waves"
+},
+{
+    "School": "University of Portland(Portland)",
+    "Nickname": "Pilots"
+},
+{
+    "School": "Saint Mary's College of California (Saint Mary's)",
+    "Nickname": "Gaels"
+},
+{
+    "School": "University of San Diego (San Diego)",
+    "Nickname": "Toreros"
+},
+{
+    "School": "University of San Francisco (San Francisco)",
+    "Nickname": "Dons"
+},
+{
+    "School": "Santa Clara University (Santa Clara)",
+    "Nickname": "Broncos"
+},
+{
+    "School": "California State University, Bakersfield (Cal State Bakersfield)",
+    "Nickname": "Roadrunners"
+},
+{
+    "School": "Chicago State University(Chicago State)",
+    "Nickname": "Cougars"
+},
+{
+    "School": "Grand Canyon University(Grand Canyon)",
+    "Nickname": "Antelopes"
+},
+{
+    "School": "University of Missouri–Kansas City (UMKC)",
+    "Nickname": "Kangaroos"
+},
+{
+    "School": "New Mexico State University(New Mexico State)",
+    "Nickname": "Aggies"
+},
+{
+    "School": "Seattle University(Seattle)",
+    "Nickname": "Redhawks"
+},
+{
+    "School": "Utah Valley University (Utah Valley)",
+    "Nickname": "Wolverines"
+},
+{
+    "School": "University of Texas Rio Grande Valley(UTRGV)",
+    "Nickname": "Vaqueros"
+}

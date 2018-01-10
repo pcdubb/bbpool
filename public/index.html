@@ -138,6 +138,8 @@ cursor: pointer; cursor: hand;
 
 
 <!-- ++++++++++++++++++++++++++++Draft Table +++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!-- ++++++++++++++++++++++++++++TODO Redesign to support any size draft++++++++++++++++++++++++++++ -->
 <br><br>
 <div class="container "><table class="text-center table table-bordered table-responsive">
  <br><br><br>
@@ -158,18 +160,18 @@ cursor: pointer; cursor: hand;
     <td>9th</td>
     <td>10th</td>
   </tr>
-  <tr>
-    <td>Player</td>
-    <td><b>Chris</b></td>
-    <td><b>Pete</b></td>
-    <td><b>Glen</b></td>
-    <td><b>Greg</b></td>
-    <td><b>Paul</b></td>
-    <td><b>Adam</b></td>
-    <td><b>Marcus</b></td>
-    <td><b>Tom</b></td>
-    <td><b>James</b></td>
-    <td><b>Rod</b></td>
+  <tr style="font-weight:bold">
+    <td>Player</td>  
+    <td id='p1'></td>
+    <td id='p2'></td>
+    <td id='p3'></td>
+    <td id='p4'></td>
+    <td id='p5'></td>
+    <td id='p6'></td>
+    <td id='p7'></td>
+    <td id='p8'></td>
+    <td id='p9'></td>
+    <td id='p10'></td>
   </tr>
   <tr>
     <td>Shared</td>
@@ -330,4 +332,12 @@ cursor: pointer; cursor: hand;
 <script src="js/pop-and-update-list.js"></script>
 <script src="js/turns.js"></script>
 <script src="js/team-select.js"></script>
+
+<!-- for NCAA Team list population *** Note, this deletes all other data *** -->
+<!-- <script src="js/teamsJSON.js"></script> -->
+
+<!-- Uncomment below when creating new draft -->
+<!-- <script src="js/draftOrder.js"></script> -->
+
+
 </html>

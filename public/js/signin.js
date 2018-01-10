@@ -14,6 +14,12 @@
 window.onload = function() {
     updateStatus();
     initApp();
+
+    // Uncomment below when creating new draft *** Note, this deletes all other data ***
+    // populateDraftOrder();
+
+    // Uncomment below when populating team list
+    // populateNCAAteams() ;
 };
 
 // ----------------------------------------------------------- //

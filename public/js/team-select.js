@@ -32,18 +32,19 @@ $(document).ready(function() {
 // who = pickNum() ---> returns next person...
 // why 3 functions? Workaround - because of asynchronicity/database latency (will return empty arrays otherwise)
 
+
+
 function pickTurn(team){
-    var currentPick = 0;
     var user = firebase.auth().currentUser;
     if (user) {
         name = user.displayName;
         email = user.email;
         var ref = firebase.database().ref("2018selections");
         ref.once("value")
-        .then(function(snapshot) {
-            currentPick = snapshot.numChildren(); 
-            whoIsNext(currentPick,email,team);
-        });
+          .then(function(snapshot) {
+            var pPick = snapshot.numChildren(); // 1 ("name")
+            whoIsNext(pPick,email,team);
+          });
     }
     else{
         alert("You're not signed in")
@@ -54,32 +55,12 @@ function whoIsNext(pickInt,email,team){
     var emailTurnArray= [];
     var eachEmail;
     var who = '';
-    var databaseRef = firebase.database().ref("2017DraftOrder").orderByKey();
-        databaseRef.once("value")
-        .then(function(snapshot) {
-            snapshot.forEach(function(somet) {
-                eachEmail = somet.val().email;
-                emailTurnArray.push(eachEmail);
-            })
-        getPicker(emailTurnArray,pickInt,email);
-        })
+    emailTurnArray = emails;
+    getPicker(emailTurnArray,pickInt,email);
 };
 
 function getPicker(array,num,email){
     console.log(array[num]+' OK!');
-
-    // var team = $('#tags').val();
-    // firebase.database().ref("2018selections").orderByChild("selTeam").equalTo(team).once("value",snapshot => {
-    //     const userData = snapshot.val();
-    //     if (userData){
-    //       console.log("exists!");
-    //       alert('Sorry, ' + team + ' has already been selected!');
-    //     }
-    //     else{
-    //         saveTeamToDb(email,team,num);
-    //         alert('Congrats, you have selected' + team);
-    //     }
-    // });
 
     var team = $('#tags').val();
     firebase.database().ref("teams").orderByChild("School").equalTo(team).once("value",snapshot1 => {
@@ -95,17 +76,13 @@ function getPicker(array,num,email){
                 if (array[num] == email){
                     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
 
-                    console.log(teamList);
-
                     if(teamList < 10){
                         saveTeamToDb(email,team,num); 
                         window.location.reload();
                         alert('Congrats, you have selected ' + team); 
                     }
-
                     else{
                         if (userData){
-                            console.log("exists!");
                             alert('Sorry, ' + team + ' has already been selected!');
                             }
                             else{
@@ -118,16 +95,6 @@ function getPicker(array,num,email){
                 else{
                     alert('Sorry, it is not your turn!')
                 }
-            
-                // if (userData){
-                // console.log("exists!");
-                // alert('Sorry, ' + team + ' has already been selected!');
-                // }
-                // else{
-                //     saveTeamToDb(email,team,num);
-                //     alert('Congrats, you have selected ' + team);
-                    
-                // }
             }
         else{
             alert(team + ' is not on the NCAA list. Please check the selection and pick again');
@@ -135,14 +102,6 @@ function getPicker(array,num,email){
     });
     });   
     });
-
-
-    // if (array[num] == email){
-    //     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
-    // }
-    // else{
-    //     alert('Sorry, it is not your turn!')
-    // };
 };
 
 
@@ -156,7 +115,6 @@ function testTeamOnList(testArray, team){
     // console.log ('printing the test array ');
     // console.log (onlist);
     for (let onlist of testArray) {
-        console.log(onlist.selTeam + ' somehow its getting here first!'); // 1, "string", false
         if(onlist.selTeam === String(team)) {  
             alert('Sorry, ' + team + ' has been selected');
             isSelected = 1;

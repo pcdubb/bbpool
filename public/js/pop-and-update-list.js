@@ -1,5 +1,13 @@
 
-// This populates the selection box for teams with NCAA BB Teams for selection
+// var teamsObject = require('./NCAAteams.json');
+// var teamArray = [];
+
+// for(var attributename in teamsObject){
+//   teamArray.push(childData.School);
+//   console.log(attributename+": " + myobject.School);
+// }
+
+// // This populates the selection box for teams with NCAA BB Teams for selection
 
 var query = firebase.database().ref("teams").orderByKey();
 var teamArray = [];
@@ -13,12 +21,12 @@ query.once("value")
     //   console.log(childData.School);
       teamArray.push(childData.School);
   });
-//   console.log(teamArray);
+// console.log(teamArray);
 
 });
 
 
-// ----------------------------------------------------------- //
+// // ----------------------------------------------------------- //
 
 
 $(document).ready(function() {

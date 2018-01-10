@@ -1,4 +1,4 @@
-var query = firebase.database().ref("playerTurns").orderByKey();
+var query = firebase.database().ref('draftOrder').child('draftOrder2018').orderByKey();
 var queryTeams = firebase.database().ref("2018selections").orderByKey();
 
 var turnArray = [];
@@ -12,7 +12,7 @@ query.once("value")
   .then(function(snapshot) {
     snapshot.forEach(function(childSnapshot) {
       var key = childSnapshot.val().name;
-      var turnEmail = childSnapshot.val().playerEmail;
+      var turnEmail = childSnapshot.val().email;
       turnArray.push(key);
       emailArray.push(turnEmail);
   })
@@ -43,13 +43,19 @@ emails.length = 0;
 function populateArray(){
         var backward = [];
         backward.length=0;
-        //First Pick
+        var backwardEmail = [];
+        backwardEmail.length=0;
+        //Shared and First Pick
         turns = turnArray.concat(turnArray);
         backward=turnArray.reverse();
+        emails = emailArray.concat(emailArray);
+        backwardEmail=emailArray.reverse();
         //Second Pick
         turns = turns.concat(backward);
+        emails = emails.concat(backwardEmail);
         //longshot
         turns = turns.concat(backward);
+        emails = emails.concat(backwardEmail);
 
 };
 
@@ -70,21 +76,35 @@ function makeHtmlListForPage(){
 function makeHtmlListForPage2(currentTurn){
 var htmlTurns = '';
 var htmlWhoseTurn = '';
-for (var i = 0; i < turns.length; i++) {
+for (var i = 0; i < turns.length + 1; i++) {
     if(i == currentTurn){
-        htmlTurns = htmlTurns + "<li class='turns' style='background-color:yellow';>" + turns[i] + "</li>";
-        htmlWhoseTurn = '<font color="red">' + '<u>' + turns[i] + '</u>' + '</font>' + ' is on the clock!';
+        if (i == turns.length){
+            htmlTurns = htmlTurns + "<li class='turns' style='background-color:yellow';>"+ "End of Draft" + "</li>";
+        }
+        else{
+            htmlTurns = htmlTurns + "<li class='turns' style='background-color:yellow';>" + turns[i] + "</li>";
+        }
+        if (i < turns.length){
+            htmlWhoseTurn = '<font color="red">' + '<u>' + turns[i] + '</u>' + '</font>' + ' is on the clock!';
+        }
+        else{
+            htmlWhoseTurn = '<font color="red">' + '<u>' + 'Draft is complete' + '</u>'; 
+        }
         var ref = firebase.database().ref("2018selections");
         var pick;
         ref.once("value")
         .then(function(snapshot) {
             pick = snapshot.numChildren(); 
-            console.log(pick);
             updateTable(pick);
         });
     }
     else{
-        htmlTurns = htmlTurns + "<li class='turns';>" + turns[i] + "</li>";
+        if (i == turns.length){
+        htmlTurns = htmlTurns + "<li class='turns';>" + "End of Draft" + "</li>";
+        }
+        else{
+        htmlTurns = htmlTurns + "<li class='turns';>" + turns[i] + "</li>";  
+        }
     }
 };
         document.getElementById('draft-order').innerHTML = htmlTurns;
@@ -95,15 +115,41 @@ for (var i = 0; i < turns.length; i++) {
 
 function updateTable(pick) {
   var teamArray = [];
+  var playerArray = [];
   teamArray.length = 0;
+  playerArray.length = 0;
+  var playerNum;
 
+
+  // this part puts the participant name values in the table
+  console.log('***getting here');
+  query.once("value")
+  .then(function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+      var nameKey = childSnapshot.val().name;
+      playerArray.push(nameKey);
+    });
+    playerNum = playerArray.length + 1;
+    console.log(playerNum);
+    for (var i = 1; i < playerNum; i++) {
+    if(playerNum > 0){
+        var tableCell = 'p'+ i;
+        document.getElementById(tableCell).textContent = playerArray[i-1];
+    }
+    else{
+    }
+    };
+    });
+  
+
+
+  // This part puts the picks/selections in the table
   queryTeams.once("value")
     .then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
         var teamKey = childSnapshot.val().selTeam;
         teamArray.push(teamKey);
     });
-
 
   for (var i = 1; i < pick+1; i++) {
     if(pick > 0){
@@ -115,40 +161,3 @@ function updateTable(pick) {
   };
   });
 };
-
-
-//  ++++++++++++++++++++++++ !!!! Populate Turns Sequence !!!! DO ONLY ONCE!!! ++++++++++++++++++++++++++++++++++ 
-// +++ Probably need to configure this at some point with a create game function +++++
-
-
-
-// var emails = [];
-// emails.length = 0;
-
-// function populateEmailDB(){
-//         var backward = [];
-//         backward.length=0;
-//         //First Pick
-//         emails = emailArray.concat(emailArray);
-//         backward=emailArray.reverse();
-//         //Second Pick
-//         emails = emails.concat(backward);
-//         //longshot
-//         emails = emails.concat(backward);
-
-
-//         for(var i in emails){
-//             var postData = {
-//                 email:emails[i],
-//                 pickNumber:i
-//             }
-//             console.log(postData);
-
-//             var newPostKey = firebase.database().ref().child('2017DraftOrder').push().key;
-//             var updates = {};
-//             updates['/2017DraftOrder/' + newPostKey] = postData;
-//             firebase.database().ref().update(updates);
-//             };
-// };
-
-
