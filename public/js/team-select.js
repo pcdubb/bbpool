@@ -21,6 +21,8 @@ $(document).ready(function() {
 });
 
 
+// sendNextEmail('paul.weyant@gmail.com', 'Test subject', 'Test message');
+// console.log('should send an email');
 
 //  ++++++++++++++++++++++++ who is next ++++++++++++++++++++++++++++++++++
 // This is done with 3 functions to avoid latency errors. The first function 
@@ -77,6 +79,8 @@ function getPicker(array,num,email){
                     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
 
                     if(teamList < 10){
+                        console.log(array[num+1]);
+                        updateOndeck(array[num+1]);
                         saveTeamToDb(email,team,num); 
                         window.location.reload();
                         alert('Congrats, you have selected ' + team); 
@@ -86,6 +90,7 @@ function getPicker(array,num,email){
                             alert('Sorry, ' + team + ' has already been selected!');
                             }
                             else{
+                                console.log(array[num+1]);
                                 saveTeamToDb(email,team,num); 
                                 window.location.reload();
                                 alert('Congrats, you have selected ' + team); 
@@ -162,8 +167,21 @@ function saveTeamToDb(email,selTeam,pick) {
   return firebase.database().ref().update(updates);
 };
 
+//  ++++++++++++++++++++++++ update the ondeck person ++++++++++++++++++++++++++++++++++ 
+
+function updateOndeck(nextEmail) {
+
+    // Ondeck entry.
+    var postData = {
+      ondeck: nextEmail
+    };
 
 
+    // Write the new data
+    var updates = {};
+    updates['/ondeck/'] = postData;
+    return firebase.database().ref().update(updates);
+  };
 
 
 // //  ++++++++++++++++++++++++ Select team function ++++++++++++++++++++++++++++++++++ 

@@ -1,3 +1,9 @@
+// const sendNextEmail = require ('sendAnEmail');
+
+// sendNextEmail('paul.weyant@gmail.com', 'Test subject', 'Test message');
+// console.log('should send an email');
+
+
 var query = firebase.database().ref('draftOrder').child('draftOrder2018').orderByKey();
 var queryTeams = firebase.database().ref("2018selections").orderByKey();
 

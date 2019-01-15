@@ -3,60 +3,154 @@
 // draft order and selections... For now, this will have to do...
 
 
-// ++++++++++++++++++++++++++++++ this is made to run once to populate the selection order +++++++++++++++++++++++++++
+// In order for this to work - you need to edit this file (to update the correct database) and uncomment the draftOrder.js 
+// line in index.html additionally, you need to add the following button code somewhere in Index.html
+// <button class="btn btn-primary" id='update-turns'>Update Turn Sequence</button>
 
+
+//2019
+//1. Tom
+//2. Adam
+//3. Rod
+//4. James
+//5. Glen
+//6. G
+//7. Chris
+//8. Paul
+//9. Pete
+//10. Marcus
+
+//2018
+// 1. Chris
+// 2. Pete 
+// 3. Glen 
+// 4. G
+// 5. Paul
+// 6. Adam
+// 7. Marcus
+// 8. Tom
+// 9. James
+// 10. Rod
+
+
+
+// ++++++++++++++++++++++++++++++ this is made to run once to populate the selection order +++++++++++++++++++++++++++
+$(document).ready(function() {
+    // Detect ios 11_0_x affected 
+    // NEED TO BE UPDATED if new versions are affected
+    var ua = navigator.userAgent,
+    iOS = /iPad|iPhone|iPod/.test(ua),
+    iOS11 = /OS 11_0_1|OS 11_0_2|OS 11_0_3|OS 11_1|OS 11_1_1|OS 11_1_2|OS 11_2|OS 11_2_1/.test(ua);
+
+    // ios 11 bug caret position
+    if ( iOS && iOS11 ) {
+
+        // Add CSS class to body
+        $("body").addClass("iosBugFixCaret");
+
+    }
+  $('#update-turns').click(function() {
+    var team = $('#tags').val();
+    populateDraftOrder();
+  });
+});
 
 function populateDraftOrder() {
 console.log("made it to the populate function");
-    // A post entry.
-    var draftOrder2018 = {
+
+//    var draftOrder2018 = {
+//         0:{
+//             name: "Chris",
+//             email: "cjames@lu-tek.com",
+//         },
+//         1:{
+//             name: "Pete",
+//             email: "peter.d.fischer@gmail.com",
+//         },
+//         2:{
+//             name: "Glen",
+//             email: "ccpowpow44@hotmail.com",
+//         },
+//         3:{
+//             name: "Greg",
+//             email: "ghaughtillini@hotmail.com",
+//         },
+//         4:{
+//             name: "Paul",
+//             email: "paul.weyant@gmail.com",
+//         },
+//         5:{
+//             name: "Adam",
+//             email: "adam.durski@gmail.com",
+//         },
+//         6:{
+//             name: "Marcus",
+//             email: "Marcus.Divita@concordenergy.com",
+//         },
+//         7:{
+//             name: "Tom",
+//             email: "tbarbar90@hotmail.com",
+//         },
+//         8:{
+//             name: "James",
+//             email: "james.f.mckinney@gmail.com",
+//         },
+//         9:{
+//             name: "Rod",
+//             email: "rodhale@comcast.net",
+//         }
+//     }
+
+
+    var draftOrder2019 = {
         0:{
-            name: "Chris",
-            email: "cjames@lu-tek.com",
-        },
-        1:{
             name: "Tom",
             email: "tbarbar90@hotmail.com",
         },
-        2:{
-            name: "Greg",
-            email: "ghaughtillini@hotmail.com",
-        },
-        3:{
-            name: "Paul",
-            email: "paul.weyant@gmail.com",
-        },
-        4:{
-            name: "Pete",
-            email: "peter.d.fischer@gmail.com",
-        },
-        5:{
+        1:{
             name: "Adam",
             email: "adam.durski@gmail.com",
         },
-        6:{
-            name: "James",
-            email: "james.f.mckinney@gmail.com",
-        },
-        7:{
-            name: "Marcus",
-            email: "Marcus.Divita@concordenergy.com",
-        },
-        8:{
+        2:{
             name: "Rod",
             email: "rodhale@comcast.net",
         },
-        9:{
+        3:{
+            name: "James",
+            email: "james.f.mckinney@gmail.com",
+        },
+        4:{
             name: "Glen",
             email: "ccpowpow44@hotmail.com",
+        },
+        5:{
+            name: "Greg",
+            email: "ghaughtillini@hotmail.com",
+        },
+        6:{
+            name: "Chris",
+            email: "cjames@lu-tek.com",
+        },
+        7:{
+            name: "Paul",
+            email: "paul.weyant@gmail.com",
+        },
+        8:{
+            name: "Pete",
+            email: "peter.d.fischer@gmail.com",
+        },
+        9:{
+            name: "Marcus",
+            email: "Marcus.Divita@concordenergy.com",
         }
-    };
+    }
+
 
     // set database.
-    var draftOrderRef = firebase.database().ref().child("draftOrder");
+    var draftOrderRef = firebase.database().ref().child("draftOrder2019");
   
     // Write the new post's data 
-    draftOrderRef.set({draftOrder2018});
+    draftOrderRef.set({draftOrder2019});
     
 };
 
