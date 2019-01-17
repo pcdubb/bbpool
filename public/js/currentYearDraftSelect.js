@@ -11,10 +11,23 @@ $(document).ready(function() {
         // Add CSS class to body
         $("body").addClass("iosBugFixCaret");
     }
-    document.getElementById('main-page-title').textContent = "2019 Draft Room";
+
+
+    // update this section each year
+    var draftOrder = 'draftOrder2019';
+    var draftSelection = '2019selections';
+    var pageTitle = '2019 Draft Room';
+    // update this section each year
+
+
+
+    document.getElementById('main-page-title').textContent = pageTitle;
     $("#main-pic").attr("src","../img/basketball.png");
     $("#main-nav-item1").attr("href","2018DraftRoom.html");
+    $("#section-123").load("../HTML/break-hr.html");
     document.getElementById('main-nav-item1').textContent = "2018 Results";
-    $("#selection-table").load("../HTML/2019table.html");
+    $("#selection-table").load("../HTML/table1.html");
     $("#team-selection-box").load("../HTML/selectTeam.html");
+    getTurnsList(draftOrder,draftSelection);
 });
+

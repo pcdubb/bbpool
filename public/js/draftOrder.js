@@ -47,59 +47,60 @@ $(document).ready(function() {
 
         // Add CSS class to body
         $("body").addClass("iosBugFixCaret");
-
-    }
-  $('#update-turns').click(function() {
-    var team = $('#tags').val();
+    };
+// add a button with ID update-turns
+//   $('#update-turns').click(function() {
+//     // var team = $('#tags').val();
+//     populateDraftOrder();
+//   });
+    });
     populateDraftOrder();
-  });
-});
 
 function populateDraftOrder() {
 console.log("made it to the populate function");
 
-//    var draftOrder2018 = {
-//         0:{
-//             name: "Chris",
-//             email: "cjames@lu-tek.com",
-//         },
-//         1:{
-//             name: "Pete",
-//             email: "peter.d.fischer@gmail.com",
-//         },
-//         2:{
-//             name: "Glen",
-//             email: "ccpowpow44@hotmail.com",
-//         },
-//         3:{
-//             name: "Greg",
-//             email: "ghaughtillini@hotmail.com",
-//         },
-//         4:{
-//             name: "Paul",
-//             email: "paul.weyant@gmail.com",
-//         },
-//         5:{
-//             name: "Adam",
-//             email: "adam.durski@gmail.com",
-//         },
-//         6:{
-//             name: "Marcus",
-//             email: "Marcus.Divita@concordenergy.com",
-//         },
-//         7:{
-//             name: "Tom",
-//             email: "tbarbar90@hotmail.com",
-//         },
-//         8:{
-//             name: "James",
-//             email: "james.f.mckinney@gmail.com",
-//         },
-//         9:{
-//             name: "Rod",
-//             email: "rodhale@comcast.net",
-//         }
-//     }
+   var draftOrder2018 = {
+        0:{
+            name: "Chris",
+            email: "cjames@lu-tek.com",
+        },
+        1:{
+            name: "Tom",
+            email: "tbarbar90@hotmail.com"
+        },
+        2:{
+            name: "Greg",
+            email: "ghaughtillini@hotmail.com",
+        },
+        3:{
+            name: "Paul",
+            email: "paul.weyant@gmail.com",
+        },
+        4:{
+            name:"Pete",
+            email: "peter.d.fischer@gmail.com",
+        },
+        5:{
+            name: "Adam",
+            email: "adam.durski@gmail.com",
+        },
+        6:{
+            name: "James",
+            email: "james.f.mckinney@gmail.com",
+        },
+        7:{
+            name: "Marcus",
+            email: "Marcus.Divita@concordenergy.com",
+        },
+        9:{
+            name: "Rod",
+            email: "rodhale@comcast.net",
+        },
+        10:{
+            name: "Glen",
+            email: "ccpowpow44@hotmail.com",
+        }
+    }
 
 
     var draftOrder2019 = {
@@ -147,11 +148,18 @@ console.log("made it to the populate function");
 
 
     // set database.
-    var draftOrderRef = firebase.database().ref().child("draftOrder2019");
+    var draftOrderRef = firebase.database().ref().child("draftOrder");
   
     // Write the new post's data 
-    draftOrderRef.set({draftOrder2019});
+    draftOrderRef.set({draftOrder2018});
     
+    // set database.
+    var draftOrderRef2 = firebase.database().ref().child("draftOrder2019");
+  
+    // Write the new post's data 
+    draftOrderRef2.set({draftOrder2019});
+
+
 };
 
 

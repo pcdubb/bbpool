@@ -1,4 +1,4 @@
-
+var curruntYearDatabase = '2019selections';
 
 $(document).ready(function() {
     // Detect ios 11_0_x affected 
@@ -16,6 +16,7 @@ $(document).ready(function() {
     }
   $('#select-btn').click(function() {
     var team = $('#tags').val();
+    console.log('got here dude');
     pickTurn(team);
   });
 });
@@ -41,11 +42,12 @@ function pickTurn(team){
     if (user) {
         name = user.displayName;
         email = user.email;
-        var ref = firebase.database().ref("2018selections");
+        var ref = firebase.database().ref(curruntYearDatabase);
         ref.once("value")
           .then(function(snapshot) {
             var pPick = snapshot.numChildren(); // 1 ("name")
-            whoIsNext(pPick,email,team);
+            console.log(team);
+            whoIsNext(pPick,email);
           });
     }
     else{
@@ -53,10 +55,8 @@ function pickTurn(team){
         }
 };
 
-function whoIsNext(pickInt,email,team){
+function whoIsNext(pickInt,email){
     var emailTurnArray= [];
-    var eachEmail;
-    var who = '';
     emailTurnArray = emails;
     getPicker(emailTurnArray,pickInt,email);
 };
@@ -67,27 +67,28 @@ function getPicker(array,num,email){
     var team = $('#tags').val();
     firebase.database().ref("teams").orderByChild("School").equalTo(team).once("value",snapshot1 => {
         const teamData = snapshot1.val();
-    firebase.database().ref("2018selections").orderByChild("selTeam").equalTo(team).once("value",snapshot2 => {
+    firebase.database().ref(curruntYearDatabase).orderByChild("selTeam").equalTo(team).once("value",snapshot2 => {
         const userData = snapshot2.val();
-    firebase.database().ref("2018selections").orderByChild("selTeam").once("value",snapshot3 => {
+    firebase.database().ref(curruntYearDatabase).orderByChild("selTeam").once("value",snapshot3 => {
         const teamList = snapshot3.numChildren();
 
         if (teamData){
           console.log("Team is on list!");
-
-                if (array[num] == email){
+                console.log(array[num]);
+                console.log(email);
+                if (array[num].toLowerCase() == email.toLowerCase()){
                     console.log (array[num] + ' and ' + email + ' are the same. The correct person is selecting a team');
 
                     if(teamList < 10){
                         console.log(array[num+1]);
-                        updateOndeck(array[num+1]);
+                        // updateOndeck(array[num+1]);
                         saveTeamToDb(email,team,num); 
                         window.location.reload();
                         alert('Congrats, you have selected ' + team); 
                     }
                     else{
                         if (userData){
-                            alert('Sorry, ' + team + ' has already been selected!');
+                            alert('Sorry, ' + team + ' have already been selected!');
                             }
                             else{
                                 console.log(array[num+1]);
@@ -159,11 +160,11 @@ function saveTeamToDb(email,selTeam,pick) {
 //   document.getElementById(tableCell).textContent = selTeam;
 
   // Get a key for a new Post.
-  var newPostKey = firebase.database().ref().child('2018selections').push().key;
+  var newPostKey = firebase.database().ref().child(curruntYearDatabase).push().key;
 
   // Write the new post's data simultaneously in the posts list and the user's post list.
   var updates = {};
-  updates['/2018selections/' + newPostKey] = postData;
+  updates['/' + curruntYearDatabase + '/' + newPostKey] = postData;
   return firebase.database().ref().update(updates);
 };
 
