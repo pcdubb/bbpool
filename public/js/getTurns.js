@@ -15,7 +15,7 @@ function getTurnsList(draft1,draft2){
     turnArray.length = 0;
     var emailArray = [];
     emailArray.length = 0;
-    var childData='';
+    // var childData='';
 
 
     query.once("value")
@@ -26,101 +26,126 @@ function getTurnsList(draft1,draft2){
         turnArray.push(key);
         emailArray.push(turnEmail);
     })
-    var carry = populateArray(turnArray,emailArray);
-    makeHtmlListForPage(carry,data_base_selections,draft1);
+    // var carry = populateArray(turnArray,emailArray);
+    var carryList = populateArray(turnArray);
+    makeHtmlListForPage(carryList,data_base_selections,data_base_turns);
     });
 };
 
 //  ++++++++++++++++++++++++ Populate Turns Sequence ++++++++++++++++++++++++++++++++++ 
 
+// This does a customized turn list -- turns go twice forward and twice backward then sends it back -- without emails
+// I originally included the emails so the person could get an email on their turn -- never incorporated that feature
 
-function populateArray(turnArray2,emailArray2){
+// function populateArray(turnArray2,emailArray2){
+    function populateArray(turnArray2){
         var backward = [];
         backward.length=0;
-        var backwardEmail = [];
-        backwardEmail.length=0;
+        // var backwardEmail = [];
+        // backwardEmail.length=0;
         //Shared and First Pick
         turns = turnArray2.concat(turnArray2);
         backward=turnArray2.reverse();
-        emails = emailArray2.concat(emailArray2);
-        backwardEmail=emailArray2.reverse();
+        // emails = emailArray2.concat(emailArray2);
+        // backwardEmail=emailArray2.reverse();
         //Second Pick
         turns = turns.concat(backward);
-        emails = emails.concat(backwardEmail);
+        // emails = emails.concat(backwardEmail);
         //longshot
         turns = turns.concat(backward);
-        emails = emails.concat(backwardEmail);
+        // emails = emails.concat(backwardEmail);
         return(turns);
 };
 
 //  ++++++++++++++++++++++++ List the Order on the site ++++++++++++++++++++++++++++++++++ 
 
+// This lists the order of the draft
 
-function makeHtmlListForPage(turn2,data_base_selections2,draft1){
+function makeHtmlListForPage(turnList,data_base_selections2,data_base_turns2){
     var currentPick = 0;
     var ref = firebase.database().ref(data_base_selections2);
 
         ref.once("value")
         .then(function(snapshot) {
-            currentPick = snapshot.numChildren(); 
-            makeHtmlListForPage2(currentPick,turn2,draft1);
+            currentPickNum = snapshot.numChildren(); 
+            // console.log("the current number of picks is " + currentPick);
+            makeHtmlListForPage2(currentPickNum,turnList,data_base_selections2,data_base_turns2);
         });
 };
 
 
-function makeHtmlListForPage2(currentTurn,turn3,draft1){
+// --- Where I was at reviewing the function ---- broken part is below here
+// It's updating the names of us players correctly, but not getting the NCAA BB team picks
+// into the table
+
+function makeHtmlListForPage2(currentPickNum,turnList,data_base_selections3,data_base_turns3){
 var htmlTurns = '';
 var htmlWhoseTurn = '';
 var numbered = '';
-for (var i = 0; i < turn3.length + 1; i++) {
-    if(i == currentTurn){
-        if (i == turn3.length){
+for (var i = 0; i < turnList.length + 1; i++) {
+    if(i == currentPickNum){
+        if (i == turnList.length){
             htmlTurns = htmlTurns + "End of Draft" ;
         }
         else{
             numbered = i + 1;
-            htmlTurns = htmlTurns + '<h3>'+'<font color="red">' + numbered + ". " + turn3[i]+"</font>"+ '</h3>'+"<br>";
+            htmlTurns = htmlTurns + '<h3>'+'<font color="red">' + numbered + ". " + turnList[i]+"</font>"+ '</h3>'+"<br>";
         }
-        if (i < turn3.length){
-            htmlWhoseTurn = '<font color="red">' + '<u>' + turn3[i] + '</u>' + '</font>' + ' is on the clock!';
+        if (i < turnList.length){
+            htmlWhoseTurn = '<font color="red">' + '<u>' + turnList[i] + '</u>' + '</font>' + ' is on the clock!';
         }
         else{
             htmlWhoseTurn = '<font color="red">' + '<u>' + 'Draft is complete' + '</u>'; 
         }
-        var ref = firebase.database().ref("2019selections");
-        var pick;
-        ref.once("value")
-        .then(function(snapshot) {
-            pick = snapshot.numChildren(); 
-            updateTable(pick,draft1);
-        });
+        // var ref = firebase.database().ref(data_base_turns3);
+        // var pick;
+        // ref.once("value")
+        // .then(function(snapshot) {
+        //     pick = snapshot.numChildren(); 
+        //     console.log(pick);
+            console.log(currentPickNum);
+            updateTable(currentPickNum,data_base_selections3,data_base_turns3);
+        // });
     }
     else{
-        if (i == turn3.length){
+        //this puts end of draft in the HTML Turns array 
+        // IMPROVE -- prob shouldn't update HTML each time
+        if (i == turnList.length){
         htmlTurns = htmlTurns + "End of Draft";
+        document.getElementById('draft-results').innerHTML = htmlTurns;
+        document.getElementById('whose-turn').innerHTML = htmlWhoseTurn;
         }
+        //this puts everyone's name in the HTML Turns array
+        // IMPROVE -- prob shouldn't update HTML each time
         else{
         numbered = i + 1;
-        htmlTurns = htmlTurns + numbered + ". " + turn3[i] + "<br>";  
+        htmlTurns = htmlTurns + numbered + ". " + turnList[i] + "<br>"; 
+        document.getElementById('draft-results').innerHTML = htmlTurns;
+        document.getElementById('whose-turn').innerHTML = htmlWhoseTurn; 
+        }
+        //this blanks out the long turn list if the draft is over
+        if(numbered == i + 1){
+            document.getElementById('draft-results').innerHTML = '';
+            document.getElementById('whose-turn').innerHTML = ''; 
         }
     }
 };
-        document.getElementById('draft-results').innerHTML = htmlTurns;
-        document.getElementById('whose-turn').innerHTML = htmlWhoseTurn;
+        // document.getElementById('draft-results').innerHTML = htmlTurns;
+        // document.getElementById('whose-turn').innerHTML = htmlWhoseTurn;
 };
 
 //  ++++++++++++++++++++++++ Update Table function ++++++++++++++++++++++++++++++++++ 
 
-function updateTable(pick,draft1) {
-    var data_base_turns = draft1;
+function updateTable(pick,data_base_selections4,data_base_turns4) {
+    var data_base_turns = data_base_turns4;
   
     var teamArray = [];
-  var playerArray = [];
-  teamArray.length = 0;
-  playerArray.length = 0;
-  var playerNum;
+    var playerArray = [];
+    teamArray.length = 0;
+    playerArray.length = 0;
+    var playerNum;
 
-  var queryTeams = firebase.database().ref("2019selections").orderByKey();
+  var queryTeams = firebase.database().ref(data_base_selections4).orderByKey();
   var query = firebase.database().ref(data_base_turns).child(data_base_turns).orderByKey();
 
   // this part puts the participant name values in the table
