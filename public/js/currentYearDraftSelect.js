@@ -47,11 +47,11 @@ var dynamicContent = getParameterByName('what');
             $("#draft-results").load("../HTML/blank.html");
             document.getElementById('main-page-title').textContent = "2019 Prediction Pool";
             $("#selection-table").load("../HTML/sortableList.html");
-            $("#main-nav-item1").attr("href","2018DraftRoom.html");
+            $("#main-nav-item1").attr("href","http:/?what=2018_Draft");
             $("#main-nav-item2").attr("href","http:/?what=2019_Draft");
             $("#section-123").load("../HTML/break-hr.html");
-            document.getElementById('main-nav-item1').textContent = "2018 Results";
-            document.getElementById('main-nav-item2').textContent = "2019 Draft";
+            document.getElementById('main-nav-item1').textContent = "2018 Draft Results";
+            document.getElementById('main-nav-item2').textContent = "2019 Draft Results";
         }
         else if (dynamicContent == '2019_Draft') {
             draftOrder = 'draftOrder2019';
@@ -62,13 +62,15 @@ var dynamicContent = getParameterByName('what');
             $("#main-nav-item1").attr("href","http:/?what=2018_Draft");
             $("#main-nav-item2").attr("href","http:/?what=2019_Prediction");
             $("#section-123").load("../HTML/break-hr.html");
-            document.getElementById('main-nav-item1').textContent = "2018 Results";
-            document.getElementById('main-nav-item2').textContent = "Prediction Pool";
+            document.getElementById('main-nav-item1').textContent = "2018 Draft Results";
+            document.getElementById('main-nav-item2').textContent = "2019 Prediction Pool";
             $("#selection-table").load("../HTML/table1.html");
             $("#team-selection-box").load("../HTML/blank.html");
             $("#whose-turn").load("../HTML/blank.html");
             // $("#team-selection-box").load("../HTML/selectTeam.html");
-            getTurnsList(draftOrder,draftSelection);
+            // getTurnsList(draftOrder,draftSelection);
+            listPlayers(draftOrder);
+            listTeams(draftSelection);
         }
         else if (dynamicContent == '2018_Draft') {
             draftOrder = "draftOrder2018";
@@ -79,12 +81,24 @@ var dynamicContent = getParameterByName('what');
             $("#main-nav-item1").attr("href","http:/?what=2019_Draft");
             $("#main-nav-item2").attr("href","http:/?what=2019_Prediction");
             $("#section-123").load("../HTML/break-hr.html");
-            document.getElementById('main-nav-item1').textContent = "2019 Results";
-            document.getElementById('main-nav-item2').textContent = "Prediction Pool";
+            document.getElementById('main-nav-item1').textContent = "2019 Draft Results";
+            document.getElementById('main-nav-item2').textContent = "2019 Prediction Pool";
             $("#selection-table").load("../HTML/table1.html");
             $("#team-selection-box").load("../HTML/blank.html");
             $("#whose-turn").load("../HTML/blank.html");
-            getTurnsList(draftOrder,draftSelection);
+            // getTurnsList(draftOrder,draftSelection);
+            listPlayers(draftOrder);
+            listTeams(draftSelection);
+        }
+        else{
+            pageTitle = "Welcome to bbpool.com";
+            document.getElementById('main-page-title').textContent = pageTitle;
+            $("#main-pic").attr("src","../img/basketball.png");
+            $("#section-123").load("../HTML/main-page-lead.html");
+            $("#main-nav-item1").attr("href","http:/?what=2019_Draft");
+            $("#main-nav-item2").attr("href","http:/?what=2019_Prediction");
+            document.getElementById('main-nav-item1').textContent = "2019 Draft Results";
+            document.getElementById('main-nav-item2').textContent = "2019 Prediction Pool";
         }
     });
 });
