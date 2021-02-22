@@ -1,0 +1,11 @@
+{
+  "name": "bbpool",
+  "version": "1.0.0",
+  "description": "package json for bbpool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

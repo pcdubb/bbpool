@@ -1,0 +1,88 @@
+<!doctype html>
+ 
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+
+    <link rel="stylesheet" href="http://necolas.github.com/normalize.css/2.0.1/normalize.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+    <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+    <script src="../js/jquery.ui.touch-punch.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css" />
+    <script src="js/signin.js"></script>
+    <script src="../js/sortableListScripts.js"></script>
+    
+   
+   
+   <!-- <script>
+
+    var name;
+    var email;
+    function storeSelection(){
+    var user = firebase.auth().currentUser;
+    if (user) {
+        name = user.displayName;
+        email = user.email;
+    }
+    else{
+        alert("You're not signed in")
+        }
+    };
+
+
+
+    $(function() {
+        $( "#sortable" ).sortable({ 
+            placeholder: "ui-sortable-placeholder" 
+        });
+    });
+
+    $("#review_sel").click(function(){
+        $('#sortable').sortable();
+        var result = $('#sortable').sortable("toArray");
+        console.log(result);
+        storeSelection();
+    });
+
+    </script> -->
+
+</head>
+
+
+<body>
+<h1 style="color:white"><center> 2021 Prediction Pool </center></h1>
+
+
+<ul style="list-style: none;" id="sortable">
+    <li class="ui-state-default" id="Adam">Adam</li>
+    <li class="ui-state-default" id="Glen">Glen</li>
+    <li class="ui-state-default" id="Greg">Greg</li>
+    <li class="ui-state-default" id="Pete">Pete</li>
+    <li class="ui-state-default" id="Marcus">Marcus</li>
+    <li class="ui-state-default" id="Paul">Paul</li>
+    <li class="ui-state-default" id="Tom">Tom</li>
+    <li class="ui-state-default" id="Rod">Rod</li>
+    <li class="ui-state-default" id="James">James</li>
+    <li class="ui-state-default" id="Chris">Chris</li>
+</ul>
+
+<center><button id="review_sel">Submit Your Selections</button></center>
+
+
+<div class="modal fade" id="displayPicksModal" data-toggle="modal" tabindex="-1" role="dialog" aria-labelledby="displayPicksModal" aria-hidden="true" style="display: none;">
+        <div class="text-center modal-dialog">
+                <div class="modal-content">
+                    <h2>Your prediction picks</h2><br>
+                    <p id="predPicks"></p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Draft Login</title>
+
+
+
+  <!-- bootstrap and firebase-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/login.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <!-- May need to update firebase number from time to time... -->
+  <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="http://www.w3schools.com/lib/w3data.js"></script>
+  <link rel="icon" href="../img/favicon-96x96.png">
+
+  <!-- ++++++++++++++++++++++++ Adding this temp to avoid changing css file ++++++++++++++++++++++++++++++++++ -->
+        <style>
+        ul {
+            list-style-image: url('https://cdn1.iconfinder.com/data/icons/interface-3/24/Next-16.png');
+            cursor: pointer; cursor: hand;
+        }
+        table {
+            border-radius: 5px;
+            width: 50%;
+            margin: 0px auto;
+            float: none;
+        }
+        </style>
+        
+        <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+        
+</head>
+<body>
+        
+        <nav class="navbar navbar-default">
+          <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="http://www.bbpool.com">bbpool.com</a>
+              <a class="navbar-brand" id="main-nav-item1"></a>
+              <a class="navbar-brand" id="main-nav-item2"></a>
+              <a class="navbar-brand" id="main-nav-item3"></a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <div class="navbar-brand" id='welcomeUser'></div>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" id='disNameUpdate' data-target="#displayNameModal"><div id="navUpName"></div></a></li>
+                <li><a href="#" id='navSignIn' data-toggle="modal" data-target="#login-modal">
+                <div id="navSign">Sign In or Register</div></a></li>
+                <li><a href="#" id="modal-password-reset"  data-toggle="modal" data-target="#changePasswordModal">
+                <div id="forgot">Forgot/Reset Password</div></a></div></li>
+              </ul>
+            </div><!-- /.container-fluid -->
+        </nav>
+        
+
+ <!-- ++++++++++++++++++++++++ All Dynamic Stuff Goes Here ++++++++++++++++++++++++++++++++++ -->
+
+    <div class="container">
+            <img width="100px" id="main-pic" class="center-block"></img>
+            <h1 class="text-center" id="main-page-title"></h1>
+    </div>
+
+    <div class="container-fluid" id="team-selection-box">
+    </div>
+
+    <div class="container-fluid" id="selection-table">
+    </div>
+
+    <div class="container-fluid" id="section-123">
+    </div>
+
+    <h1 class="text-center">
+        <div class="container-fluid" id="whose-turn">
+    </div></h1>
+
+    <div class="container-fluid">
+    <div class="text-center" id="draft-results">
+    </div>
+    </div>
+
+
+ <!-- ++++++++++++++++++++++++ End of Dynamic Stuff ++++++++++++++++++++++++++++++++++ -->
+
+
+<!--Login Modal-->
+<div class="modal fade" id="login-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>Login to Your Account</h1><br>
+            <form id='formfield-login' method="post">
+                <input type="text" id="modal-email" name="email" placeholder="Email"/>
+                <input type="password" id="modal-password" name="password" placeholder="Password"/>
+                 <div id="signin-errors"></div>
+                <button type="button" value="Login" data-dismiss="modal" aria-hidden="true" id="modal-sign-in" name="signin" class="login loginmodal-submit" style="display: block; width: 100%;">Login</button>
+            </form>
+
+            </div>
+        </div>
+    </div>
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+<!--Logout Modal-->
+<div class="modal fade" id="logout-modal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+            <div class="loginmodal-container">
+                <h1>You have logged out</h1><br>
+            <form>
+                <button type="button" data-dismiss="modal" value="Logout" aria-hidden="true" id="modal-sign-out" name="signout" class="login loginmodal-submit" style="display: block; width: 100%;">Dismiss</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+
+
+<!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+ <!--Change Password Modal-->
+<div class="modal fade" id="changePasswordModal" tabindex="-1" data-toggle="modal" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+        <div class="modal-dialog">
+            <div class="loginmodal-container">
+                    <h1>Reset Password</h1><br>
+                <form id='formfield-pw' method="post">
+                    <input type="text" id="pw-modal-email" name="pwemail" placeholder="Registered User Email"/>
+                    <button onclick="resetPassword();return false" type="button" class="btn btn-primary" aria-hidden="true" value="Logout" data-dismiss="modal" id="modal-password-reset" style="display: block; width: 100%;">Send Password Reset Email</button>
+                </form>
+                </div>
+            </div>
+        </div>
+    
+    
+    <!-- ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ -->
+
+
+<!--Change displayName Modal-->
+
+<div class="modal fade" id="displayNameModal" data-toggle="modal" tabindex="-1" role="dialog" aria-labelledby="displayNameModal" aria-hidden="true" style="display: none;">
+    <div class="text-center modal-dialog">
+            <div class="modal-content">
+                <h2>Change Display Name</h2><br>
+                <input type="text" id="nameInputModal" name="displayNameModal" placeholder="Display Name"/>
+            <form>
+                <button type="button" data-dismiss="modal" value="Update Display Name" aria-hidden="true" id="modalDisplayName" name="changeDisplayName" class="btn btn-primary" style="width: 50%;">Change Name</button>
+                <br><br>
+            </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<!-- ++++++++++++++++++++++++++++++After Page Load Javascript+++++++++++++++++++++++++++++++++ -->
+<!-- +++++++ User authentication js ++++++++++++++ -->
+<script src="js/signin.js"></script>
+
+<!-- +++++++ Makes the table displaying picks ++++++++++++++ -->
+<script src="js/makePickTable.js"></script> 
+
+<!-- +++++++ loads generic functions to put turns on site ++++++++++++++ -->
+<script src="js/getTurns.js"></script>
+
+<!-- +++++++ Puts in title and video uncomment draft section ++++++++++++++ -->
+<!-- +++++++ This file requires major editing every year-- need to fix ++++++++++++++ -->
+<script src="js/currentYearDraftSelect.js"></script>
+
+<!-- +++++++Populates and updates teams in dropdown - also in selectTeam.html++++++++++++++ -->
+<script src="js/pop-and-update-list.js"></script> 
+
+<!-- <script src="js/turns.js"></script> -->
+<script src="js/team-select.js"></script> 
+
+
+
+<!-- for NCAA Team list population *** Note, this deletes all other data *** -->
+<!-- <script src="js/teamsJSON.js"></script> -->
+
+<!-- Uncomment below when creating new draft -->
+<!-- <script src="js/draftOrder.js"></script> -->
+
+
+</html>
